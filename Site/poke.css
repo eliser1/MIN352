@@ -34,8 +34,11 @@
 body {
   font-family: 'Quicksand', sans-serif;
   height: 100%;
+  font-family: pokemon;
   line-height: 1.5;
   user-select: none;
+  background: white;
+  color: #333333;
 }
 p {
   text-align: center;
@@ -45,38 +48,8 @@ p {
   font-family: pokemon;
   src: url(pokemon.ttf);
 }
-body {
-  font-family: pokemon;
-  background: white;
-  color: #301710;
-}
 .material-icons {
   vertical-align: text-bottom;
-}
-.btn:hover {
-  color: white;
-  background: #c8c8c8;
-  border: none;
-}
-.btn {
-  background: #ff5f58;
-  color: white;
-  border: none;
-  border-radius: 25px;
-}
-.btn-outline-success:focus, .btn-outline-success.focus {
-  box-shadow: none;
-}
-.btn-outline-success:not(:disabled):not(.disabled):active, .btn-outline-success:not(:disabled):not(.disabled).active,
-.show > .btn-outline-success.dropdown-toggle {
-  color: #fff;
-  background: #c8c8c8;
-  border: none;
-}
-.btn-outline-success:not(:disabled):not(.disabled):active:focus, .btn-outline-success:not(:disabled):not(.disabled).active:focus,
-.show > .btn-outline-success.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem #8db9e3;
-  color: white;
 }
 .dropdown-item {
   font-size: 0.65em;
@@ -93,8 +66,9 @@ body {
   color: white;
 }
 .form-control {
-  background: #c8c8c8;
-  border-radius: 25px;
+  background: #ffffff;
+  color: #333333;
+  border-radius: 25px
 }
 .form-control:focus {
   box-shadow: none;
@@ -191,7 +165,7 @@ body {
 }
 .top:hover {
   cursor: pointer;
-  box-shadow: 5px 5px 5px #c8c8c8;
+  box-shadow: 5px 5px 5px #333333;
 }
 .typesin {
   border-radius: 5px;
@@ -216,18 +190,3 @@ body {
   font-family: 'Quicksand', sans-serif;
   font-size: 1.5em;
 }
-/* #pokeball {
-  background: linear-gradient(180deg, #f15f5a 50%, #333333 50%);
-}
-#greatball {
-  background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
-}
-#ultraball {
-  background: linear-gradient(180deg, #ebc266 50%, #333333 50%);
-}
-#masterball {
-  background: linear-gradient(180deg, #c971a0 50%, #594c8c 50%);
-}
-#premierball {
-  background: linear-gradient(180deg, white 50%, #f15f5a 50%);
-} */
