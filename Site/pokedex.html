@@ -11,14 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="poke.css">
+    <link id="stylesheet" rel="stylesheet" href="poke.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <a class="navbar-brand" href="#">
-        <img src="../Pokeball.svg" width="30" height="30">
+        <img id="pokeicon" src="../Pokeball.svg" width="30" height="30">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="material-icons">
@@ -1232,47 +1232,43 @@
     //  }
     // }
     //
-    var poke = document.getElementById("pokeball");
-        poke.addEventListener("click", changeThemeP);
-    var great = document.getElementById("greatball");
-      great.addEventListener("click", changeThemeG);
-    var ultra = document.getElementById("ultraball");
-        ultra.addEventListener("click", changeThemeU);
-    var master = document.getElementById("masterball");
-        master.addEventListener("click", changeThemeM);
-    var premier = document.getElementById("premierball");
-        premier.addEventListener("click", changeThemePr);
-    var nav = document.getElementsByClassName("navbar");
-    var body = document.getElementsByTagName("body");
-    var search = document.getElementById("searchinput");
+    document.getElementById("pokeball").addEventListener("click", changeThemeP);
+    document.getElementById("greatball").addEventListener("click", changeThemeG);
+    document.getElementById("ultraball").addEventListener("click", changeThemeU);
+    document.getElementById("masterball").addEventListener("click", changeThemeM);
+    document.getElementById("premierball").addEventListener("click", changeThemePr);
+    
+    var pokeicon = document.getElementById("pokeicon");
+    var stylesheet = document.getElementById("stylesheet");
+
     function changeThemeP(){
-        nav.style.backgroundColor = "#333333";
-        body.style.backgroundColor = "white";
-        search.style.backgroundColor = "#c8c8c8";
-        search.style.color = "#333333";
+       stylesheet.href = "poke.css";
+        pokeicon.src = "../Pokeball.svg"
       }
     function changeThemeG(){
-        nav.style.backgroundColor = "#f15f5a";
-        body.style.backgroundColor = "#53a4cf";
-        search.style.backgroundColor = "#ffffff";
+        stylesheet.href = "great.css";
+        pokeicon.src = "../Greatball.svg"
       }
      function changeThemeU(){
-        nav.style.backgroundColor = "#ebc266";
-        body.style.backgroundColor = "#333333";
-        search.style.backgroundColor = "#ffffff";
-        search.style.color = "#333333";
+        stylesheet.href = "ultra.css";
+        pokeicon.src = "../Ultraball.svg"
       }
       function changeThemeM(){
-        nav.style.backgroundColor = "#c971a0";
-        body.style.backgroundColor = "#ffffff";
-        search.style.backgroundColor = "#ffffff";
-        search.style.color = "#594c8c";
+        // body[0].style.backgroundColor = "#ffffff";
+        // body[0].style.color = "#333333";
+        // search.style.backgroundColor = "#ffffff";
+        // search.style.color = "#594c8c";
+        stylesheet.href = "master.css";
+        pokeicon.src = "../Masterball.svg"
       }
       function changeThemePr(){
-        nav.style.backgroundColor = "#f15f5a";
-        body.style.backgroundColor = "#53a4cf";
-        search.style.backgroundColor = "#ffffff";
-        search.style.color = "#333333";
+        // nav[0].style.backgroundColor = "#f15f5a";
+        // body[0].style.backgroundColor = "#ffffff";
+        // body[0].style.color = "#333333";
+        // search.style.backgroundColor = "#ffffff";
+        // search.style.color = "#333333";
+        stylesheet.href = "premier.css";
+        pokeicon.src = "../Premierball.svg"
       }
         // i need this to show the whole div the pokemon is in, not just the name
         // i will also need to be able to filter based on type
