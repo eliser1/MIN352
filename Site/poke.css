@@ -132,6 +132,9 @@ body {
   font-size: 1.5em;
   margin: 0.25em;
 }
+.all {
+  background: #333333;
+}
 .grass {
   background: #9bcc50;
 }
@@ -181,7 +184,7 @@ body {
   background: #7b62a3;
 }
 .dragon {
-  background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+  background: linear-gradient(180deg, #53a4cf 50%, #f15f5a 50%);
 }
 .dark {
   background: #707070;
@@ -209,3 +212,22 @@ body {
   border: 1px solid black;
   border-radius: 5px;
 }
+.desc {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5em;
+}
+/* #pokeball {
+  background: linear-gradient(180deg, #f15f5a 50%, #333333 50%);
+}
+#greatball {
+  background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+}
+#ultraball {
+  background: linear-gradient(180deg, #ebc266 50%, #333333 50%);
+}
+#masterball {
+  background: linear-gradient(180deg, #c971a0 50%, #594c8c 50%);
+}
+#premierball {
+  background: linear-gradient(180deg, white 50%, #f15f5a 50%);
+} */
