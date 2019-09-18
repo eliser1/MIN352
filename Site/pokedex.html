@@ -1,10 +1,14 @@
 <!-- when using dropdown, not hovering on the text up top turns it black -->
 <!-- dropdowns way too big on smaller screens with super small text -->
-<!-- make search to far right not left -->
+<!-- sort by type buttons, function showOnlyType() to show only those -->
+<!-- will need to put classes on all pokemon to clarify type and make sure they stay on page -->
+<!-- ensure that theme selection stays on other pages and does not reset -->
+<!-- put search bar on right -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="poke.css">
@@ -13,7 +17,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-      <a class="navbar-brand" href="pokedex.html">
+      <a class="navbar-brand" href="#">
         <img src="../Pokeball.svg" width="30" height="30">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,6 +27,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+           <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Change Theme</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item themes" id="pokeball">Pokéball</a>
+              <a class="dropdown-item themes" id="greatball">Greatball</a>
+              <a class="dropdown-item themes" id="ultraball">Ultraball</a>
+              <a class="dropdown-item themes" id="masterball">Masterball</a>
+              <a class="dropdown-item themes" id="premierball">Premierball</a>
+            </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Regions
@@ -44,24 +57,25 @@
               Sort by Type
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item typesdrop grass" href="#">Grass</a>
-              <a class="dropdown-item typesdrop poison" href="#">Poison</a>
-              <a class="dropdown-item typesdrop fire" href="#">Fire</a>
-              <a class="dropdown-item typesdrop flying" href="#">Flying</a>
-              <a class="dropdown-item typesdrop water" href="#">Water</a>
-              <a class="dropdown-item typesdrop bug" href="#">Bug</a>
-              <a class="dropdown-item typesdrop normal" href="#">Normal</a>
-              <a class="dropdown-item typesdrop electric" href="#">Electric</a>
-              <a class="dropdown-item typesdrop ground" href="#">Ground</a>
-              <a class="dropdown-item typesdrop fairy" href="#">Fairy</a>
-              <a class="dropdown-item typesdrop psychic" href="#">Psychic</a>
-              <a class="dropdown-item typesdrop fighting" href="#">Fighting</a>
-              <a class="dropdown-item typesdrop rock" href="#">Rock</a>
-              <a class="dropdown-item typesdrop steel" href="#">Steel</a>
-              <a class="dropdown-item typesdrop ice" href="#">Ice</a>
-              <a class="dropdown-item typesdrop ghost" href="#">Ghost</a>
-              <a class="dropdown-item typesdrop dragon" href="#">Dragon</a>
-              <a class="dropdown-item typesdrop dark" href="#">Dark</a>
+              <a class="dropdown-item typesdrop all" id="all" href="#" onclick="filterSelection('all')">All</a>
+              <a class="dropdown-item typesdrop grass" id="grass" href="#" onclick="filterSelection('grassp')">Grass</a>
+              <a class="dropdown-item typesdrop poison" id="poison" href="#" onclick="filterSelection('poisonp')">Poison</a>
+              <a class="dropdown-item typesdrop fire" id="fire" href="#" onclick="filterSelection('firep')">Fire</a>
+              <a class="dropdown-item typesdrop flying" id="flying" href="#" onclick="filterSelection('flyingp')">Flying</a>
+              <a class="dropdown-item typesdrop water" id="water" href="#">Water</a>
+              <a class="dropdown-item typesdrop bug" id="bug" href="#">Bug</a>
+              <a class="dropdown-item typesdrop normal" id="normal" href="#">Normal</a>
+              <a class="dropdown-item typesdrop electric" id="electric" href="#">Electric</a>
+              <a class="dropdown-item typesdrop ground" id="ground" href="#">Ground</a>
+              <a class="dropdown-item typesdrop fairy" id="fairy" href="#">Fairy</a>
+              <a class="dropdown-item typesdrop psychic" id="psychic" href="#">Psychic</a>
+              <a class="dropdown-item typesdrop fighting" id="fighting" href="#">Fighting</a>
+              <a class="dropdown-item typesdrop rock" id="rock" href="#">Rock</a>
+              <a class="dropdown-item typesdrop steel" id="steel" href="#">Steel</a>
+              <a class="dropdown-item typesdrop ice" id="ice" href="#">Ice</a>
+              <a class="dropdown-item typesdrop ghost" id="ghost" href="#">Ghost</a>
+              <a class="dropdown-item typesdrop dragon" id="dragon" href="#">Dragon</a>
+              <a class="dropdown-item typesdrop dark" id="dark" href="#">Dark</a>
             </div>
           </li>
         <form class="form-inline my-2 my-lg-0">
@@ -71,7 +85,7 @@
     </nav>
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div id="bulbasaur" class="col-lg-3 col-md-4 col-sm-6 pokemon grassp poisonp">
           <a href="bulbasaur.html"><img class="img-thumbnail top" src="../Bulbasaur.svg"></a>
           <p class="name">Bulbasaur</p>
             <div class="row">
@@ -79,7 +93,7 @@
               <div class="col-md-6"><p class="poison types">Poison</p></div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div id="ivysaur" class="col-lg-3 col-md-4 col-sm-6 pokemon grassp poisonp">
           <a href="ivysaur.html"><img class="img-thumbnail top" src="../Ivysaur.svg"></a>
           <p class="name">Ivysaur</p>
           <div class="row">
@@ -87,7 +101,7 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div id="venusaur" class="col-lg-3 col-md-4 col-sm-6 pokemon grassp poisonp">
           <a href="venusaur.html"><img class="img-thumbnail top" src="../Venusaur.svg"></a>
           <p class="name">Venusaur</p>
           <div class="row">
@@ -95,21 +109,21 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div id="charmander" class="col-lg-3 col-md-4 col-sm-6 pokemon firep">
           <img class="img-thumbnail top" src="../Charmander.svg">
           <p class="name">Charmander</p>
           <div class="row">
             <div class="col-md-6"><p class="fire types">Fire</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div id="charmeleon" class="col-lg-3 col-md-4 col-sm-6 pokemon firep">
           <img class="img-thumbnail top" src="../Charmeleon.svg">
           <p class="name">Charmeleon</p>
           <div class="row">
             <div class="col-md-6"><p class="fire types">Fire</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div id="charizard" class="col-lg-3 col-md-4 col-sm-6 pokemon firep flyingp">
           <img class="img-thumbnail top" src="../Charizard.svg">
           <p class="name">Charizard</p>
           <div class="row">
@@ -117,42 +131,42 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Squirtle.svg">
           <p class="name">Squirtle</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Wartortle.svg">
           <p class="name">Wartortle</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Blastoise.svg">
           <p class="name">Blastoise</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon bugp">
           <img class="img-thumbnail top" src="../Caterpie.svg">
           <p class="name">Caterpie</p>
           <div class="row">
             <div class="col-md-6"><p class="bug types">Bug</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon bugp">
           <img class="img-thumbnail top" src="../Metapod.svg">
           <p class="name">Metapod</p>
           <div class="row">
             <div class="col-md-6"><p class="bug types">Bug</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon bugp flyingp">
           <img class="img-thumbnail top" src="../Butterfree.svg">
           <p class="name">Butterfree</p>
           <div class="row">
@@ -160,7 +174,7 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon bugp poisonp">
           <img class="img-thumbnail top" src="../Weedle.svg">
           <p class="name">Weedle</p>
           <div class="row">
@@ -168,7 +182,7 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon bugp poisonp">
           <img class="img-thumbnail top" src="../Kakuna.svg">
           <p class="name">Kakuna</p>
           <div class="row">
@@ -176,7 +190,7 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon bugp poisonp">
           <img class="img-thumbnail top" src="../Beedrill.svg">
           <p class="name">Beedrill</p>
           <div class="row">
@@ -184,7 +198,7 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp flyingp">
           <img class="img-thumbnail top" src="../Pidgey.svg">
           <p class="name">Pidgey</p>
           <div class="row">
@@ -192,7 +206,7 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp flyingp">
           <img class="img-thumbnail top" src="../Pidgeotto.svg">
           <p class="name">Pidgeotto</p>
           <div class="row">
@@ -200,7 +214,7 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp flyingp">
           <img class="img-thumbnail top" src="../Pidgeot.svg">
           <p class="name">Pidgeot</p>
           <div class="row">
@@ -208,21 +222,21 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp">
           <img class="img-thumbnail top" src="../Rattata.svg">
           <p class="name">Rattata</p>
           <div class="row">
             <div class="col-md-6"><p class="normal types">Normal</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp">
           <img class="img-thumbnail top" src="../Raticate.svg">
           <p class="name">Raticate</p>
           <div class="row">
             <div class="col-md-6"><p class="normal types">Normal</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp flyingp">
           <img class="img-thumbnail top" src="../Spearow.svg">
           <p class="name">Spearow</p>
           <div class="row">
@@ -230,7 +244,7 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp flyingp">
           <img class="img-thumbnail top" src="../Fearow.svg">
           <p class="name">Fearow</p>
           <div class="row">
@@ -238,63 +252,63 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon poisonp">
           <img class="img-thumbnail top" src="../Ekans.svg">
           <p class="name">Ekans</p>
           <div class="row">
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon poisonp">
           <img class="img-thumbnail top" src="../Arbok.svg">
           <p class="name">Arbok</p>
           <div class="row">
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon electricp">
           <img class="img-thumbnail top" src="../Pikachu.svg">
           <p class="name">Pikachu</p>
           <div class="row">
             <div class="col-md-6"><p class="electric types">Electric</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon electricp">
           <img class="img-thumbnail top" src="../Raichu.svg">
           <p class="name">Raichu</p>
           <div class="row">
             <div class="col-md-6"><p class="electric types">Electric</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon groundp">
           <img class="img-thumbnail top" src="../Sandshrew.svg">
           <p class="name">Sandshrew</p>
           <div class="row">
             <div class="col-md-6"><p class="ground types">Ground</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon groundp">
           <img class="img-thumbnail top" src="../Sandslash.svg">
           <p class="name">Sandslash</p>
           <div class="row">
             <div class="col-md-6"><p class="ground types">Ground</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon poisonp">
           <img class="img-thumbnail top" src="../NidoranF.svg">
           <p class="name">Nidoran ♀</p>
           <div class="row">
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon poisonp">
           <img class="img-thumbnail top" src="../Nidorina.svg">
           <p class="name">Nidorina</p>
           <div class="row">
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon poisonp groundp">
           <img class="img-thumbnail top" src="../Nidoqueen.svg">
           <p class="name">Nidoqueen</p>
           <div class="row">
@@ -302,21 +316,21 @@
             <div class="col-md-6"><p class="ground types">Ground</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon poisonp">
           <img class="img-thumbnail top" src="../NidoranM.svg">
           <p class="name">Nidoran ♂</p>
           <div class="row">
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon poisonp">
           <img class="img-thumbnail top" src="../Nidorino.svg">
           <p class="name">Nidorino</p>
           <div class="row">
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon poisonp groundp">
           <img class="img-thumbnail top" src="../Nidoking.svg">
           <p class="name">Nidoking</p>
           <div class="row">
@@ -324,35 +338,35 @@
             <div class="col-md-6"><p class="ground types">Ground</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon fairyp">
           <img class="img-thumbnail top" src="../Clefairy.svg">
           <p class="name">Clefairy</p>
           <div class="row">
             <div class="col-md-6"><p class="fairy types">Fairy</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon fairyp">
           <img class="img-thumbnail top" src="../Clefable.svg">
           <p class="name">Clefable</p>
           <div class="row">
             <div class="col-md-6"><p class="fairy types">Fairy</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon firep">
           <img class="img-thumbnail top" src="../Vulpix.svg">
           <p class="name">Vulpix</p>
           <div class="row">
             <div class="col-md-6"><p class="fire types">Fire</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon firep">
           <img class="img-thumbnail top" src="../Ninetales.svg">
           <p class="name">Ninetales</p>
           <div class="row">
             <div class="col-md-6"><p class="fire types">Fire</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp fairyp">
           <img class="img-thumbnail top" src="../Jigglypuff.svg">
           <p class="name">Jigglypuff</p>
           <div class="row">
@@ -360,7 +374,7 @@
             <div class="col-md-6"><p class="fairy types">Fairy</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp fairyp">
           <img class="img-thumbnail top" src="../Wigglytuff.svg">
           <p class="name">Wigglytuff</p>
           <div class="row">
@@ -368,7 +382,7 @@
             <div class="col-md-6"><p class="fairy types">Fairy</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon poisonp flyingp">
           <img class="img-thumbnail top" src="../Zubat.svg">
           <p class="name">Zubat</p>
           <div class="row">
@@ -376,7 +390,7 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon poisonp flyingp">
           <img class="img-thumbnail top" src="../Golbat.svg">
           <p class="name">Golbat</p>
           <div class="row">
@@ -384,7 +398,7 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon grassp poisonp">
           <img class="img-thumbnail top" src="../Oddish.svg">
           <p class="name">Oddish</p>
           <div class="row">
@@ -392,7 +406,7 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon grassp poisonp">
           <img class="img-thumbnail top" src="../Gloom.svg">
           <p class="name">Gloom</p>
           <div class="row">
@@ -400,7 +414,7 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon grassp poisonp">
           <img class="img-thumbnail top" src="../Vileplume.svg">
           <p class="name">Vileplume</p>
           <div class="row">
@@ -408,7 +422,7 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon bugp grassp">
           <img class="img-thumbnail top" src="../Paras.svg">
           <p class="name">Paras</p>
           <div class="row">
@@ -416,7 +430,7 @@
             <div class="col-md-6"><p class="grass types">Grass</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon bugp grassp">
           <img class="img-thumbnail top" src="../Parasect.svg">
           <p class="name">Parasect</p>
           <div class="row">
@@ -424,7 +438,7 @@
             <div class="col-md-6"><p class="grass types">Grass</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon bugp poisonp">
           <img class="img-thumbnail top" src="../Venonat.svg">
           <p class="name">Venonat</p>
           <div class="row">
@@ -432,7 +446,7 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon bugp poisonp">
           <img class="img-thumbnail top" src="../Venomoth.svg">
           <p class="name">Venomoth</p>
           <div class="row">
@@ -440,91 +454,91 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon groundp">
           <img class="img-thumbnail top" src="../Diglett.svg">
           <p class="name">Diglett</p>
           <div class="row">
             <div class="col-md-6"><p class="ground types">Ground</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon groundp">
           <img class="img-thumbnail top" src="../Dugtrio.svg">
           <p class="name">Dugtrio</p>
           <div class="row">
             <div class="col-md-6"><p class="ground types">Ground</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp">
           <img class="img-thumbnail top" src="../Meowth.svg">
           <p class="name">Meowth</p>
           <div class="row">
             <div class="col-md-6"><p class="normal types">Normal</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp">
           <img class="img-thumbnail top" src="../Persian.svg">
           <p class="name">Persian</p>
           <div class="row">
             <div class="col-md-6"><p class="normal types">Normal</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Psyduck.svg">
           <p class="name">Psyduck</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Golduck.svg">
           <p class="name">Golduck</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon fightingp">
           <img class="img-thumbnail top" src="../Mankey.svg">
           <p class="name">Mankey</p>
           <div class="row">
             <div class="col-md-6"><p class="fighting types">Fighting</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon fightingp">
           <img class="img-thumbnail top" src="../Primeape.svg">
           <p class="name">Primeape</p>
           <div class="row">
             <div class="col-md-6"><p class="fighting types">Fighting</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon firep">
           <img class="img-thumbnail top" src="../Growlithe.svg">
           <p class="name">Growlithe</p>
           <div class="row">
             <div class="col-md-6"><p class="fire types">Fire</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon firep">
           <img class="img-thumbnail top" src="../Arcanine.svg">
           <p class="name">Arcanine</p>
           <div class="row">
             <div class="col-md-6"><p class="fire types">Fire</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Poliwag.svg">
           <p class="name">Poliwag</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Poliwhirl.svg">
           <p class="name">Poliwhirl</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp fightingp">
           <img class="img-thumbnail top" src="../Poliwrath.svg">
           <p class="name">Poliwrath</p>
           <div class="row">
@@ -532,49 +546,49 @@
             <div class="col-md-6"><p class="fighting types">Fighting</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon psychicp">
           <img class="img-thumbnail top" src="../Abra.svg">
           <p class="name">Abra</p>
           <div class="row">
             <div class="col-md-6"><p class="psychic types">Psychic</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon psychicp">
           <img class="img-thumbnail top" src="../Kadabra.svg">
           <p class="name">Kadabra</p>
           <div class="row">
             <div class="col-md-6"><p class="psychic types">Psychic</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon psychicp">
           <img class="img-thumbnail top" src="../Alakazam.svg">
           <p class="name">Alakazam</p>
           <div class="row">
             <div class="col-md-6"><p class="psychic types">Psychic</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon fightingp">
           <img class="img-thumbnail top" src="../Machop.svg">
           <p class="name">Machop</p>
           <div class="row">
             <div class="col-md-6"><p class="fighting types">Fighting</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon fightingp">
           <img class="img-thumbnail top" src="../Machoke.svg">
           <p class="name">Machoke</p>
           <div class="row">
             <div class="col-md-6"><p class="fighting types">Fighting</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon fightingp">
           <img class="img-thumbnail top" src="../Machamp.svg">
           <p class="name">Machamp</p>
           <div class="row">
             <div class="col-md-6"><p class="fighting types">Fighting</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon grassp poisonp">
           <img class="img-thumbnail top" src="../Bellsprout.svg">
           <p class="name">Bellsprout</p>
           <div class="row">
@@ -582,7 +596,7 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon grassp poisonp">
           <img class="img-thumbnail top" src="../Weepinbell.svg">
           <p class="name">Weepinbell</p>
           <div class="row">
@@ -590,7 +604,7 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon grassp poisonp">
           <img class="img-thumbnail top" src="../Victreebell.svg">
           <p class="name">Victreebell</p>
           <div class="row">
@@ -598,7 +612,7 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp poisonp">
           <img class="img-thumbnail top" src="../Tentacool.svg">
           <p class="name">Tentacool</p>
           <div class="row">
@@ -606,7 +620,7 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp poisonp">
           <img class="img-thumbnail top" src="../Tentacruel.svg">
           <p class="name">Tentacruel</p>
           <div class="row">
@@ -614,7 +628,7 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon rockp groundp">
           <img class="img-thumbnail top" src="../Geodude.svg">
           <p class="name">Geodude</p>
           <div class="row">
@@ -622,7 +636,7 @@
             <div class="col-md-6"><p class="ground types">Ground</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon rockp groundp">
           <img class="img-thumbnail top" src="../Graveler.svg">
           <p class="name">Graveler</p>
           <div class="row">
@@ -630,7 +644,7 @@
             <div class="col-md-6"><p class="ground types">Ground</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon rockp groundp">
           <img class="img-thumbnail top" src="../Golem.svg">
           <p class="name">Golem</p>
           <div class="row">
@@ -638,21 +652,21 @@
             <div class="col-md-6"><p class="ground types">Ground</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon firep">
           <img class="img-thumbnail top" src="../Ponyta.svg">
           <p class="name">Ponyta</p>
           <div class="row">
             <div class="col-md-6"><p class="fire types">Fire</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon firep">
           <img class="img-thumbnail top" src="../Rapidash.svg">
           <p class="name">Rapidash</p>
           <div class="row">
             <div class="col-md-6"><p class="fire types">Fire</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp psychicp">
           <img class="img-thumbnail top" src="../Slowpoke.svg">
           <p class="name">Slowpoke</p>
           <div class="row">
@@ -660,7 +674,7 @@
             <div class="col-md-6"><p class="psychic types">Psychic</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp psychicp">
           <img class="img-thumbnail top" src="../Slowbro.svg">
           <p class="name">Slowbro</p>
           <div class="row">
@@ -668,7 +682,7 @@
             <div class="col-md-6"><p class="psychic types">Psychic</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon electricp steelp">
           <img class="img-thumbnail top" src="../Magnemite.svg">
           <p class="name">Magnemite</p>
           <div class="row">
@@ -676,7 +690,7 @@
             <div class="col-md-6"><p class="steel types">Steel</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon electricp steelp">
           <img class="img-thumbnail top" src="../Magneton.svg">
           <p class="name">Magneton</p>
           <div class="row">
@@ -684,7 +698,7 @@
             <div class="col-md-6"><p class="steel types">Steel</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp flyingp">
           <img class="img-thumbnail top" src="../Farfetch'd.svg">
           <p class="name">Farfetch'd</p>
           <div class="row">
@@ -692,7 +706,7 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp flyingp">
           <img class="img-thumbnail top" src="../Doduo.svg">
           <p class="name">Doduo</p>
           <div class="row">
@@ -700,7 +714,7 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp flyingp">
           <img class="img-thumbnail top" src="../Dodrio.svg">
           <p class="name">Dodrio</p>
           <div class="row">
@@ -708,14 +722,14 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Seel.svg">
           <p class="name">Seel</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp icep">
           <img class="img-thumbnail top" src="../Dewgong.svg">
           <p class="name">Dewgong</p>
           <div class="row">
@@ -723,28 +737,28 @@
             <div class="col-md-6"><p class="ice types">Ice</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon poisonp">
           <img class="img-thumbnail top" src="../Grimer.svg">
           <p class="name">Grimer</p>
           <div class="row">
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon poisonp">
           <img class="img-thumbnail top" src="../Muk.svg">
           <p class="name">Muk</p>
           <div class="row">
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Shellder.svg">
           <p class="name">Shellder</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp icep">
           <img class="img-thumbnail top" src="../Cloyster.svg">
           <p class="name">Cloyster</p>
           <div class="row">
@@ -752,7 +766,7 @@
             <div class="col-md-6"><p class="ice types">Ice</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon ghostp poisonp">
           <img class="img-thumbnail top" src="../Ghastly.svg">
           <p class="name">Ghastly</p>
           <div class="row">
@@ -760,7 +774,7 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon ghostp poisonp">
           <img class="img-thumbnail top" src="../Haunter.svg">
           <p class="name">Haunter</p>
           <div class="row">
@@ -768,7 +782,7 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon ghostp poisonp">
           <img class="img-thumbnail top" src="../Gengar.svg">
           <p class="name">Gengar</p>
           <div class="row">
@@ -776,7 +790,7 @@
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon rockp groundp">
           <img class="img-thumbnail top" src="../Onix.svg">
           <p class="name">Onix</p>
           <div class="row">
@@ -784,49 +798,49 @@
             <div class="col-md-6"><p class="ground types">Ground</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon psychicp">
           <img class="img-thumbnail top" src="../Drowzee.svg">
           <p class="name">Drowzee</p>
           <div class="row">
             <div class="col-md-6"><p class="psychic types">Psychic</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon psychicp">
           <img class="img-thumbnail top" src="../Hypno.svg">
           <p class="name">Hypno</p>
           <div class="row">
             <div class="col-md-6"><p class="psychic types">Psychic</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Krabby.svg">
           <p class="name">Krabby</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Kingler.svg">
           <p class="name">Kingler</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon electricp">
           <img class="img-thumbnail top" src="../Voltorb.svg">
           <p class="name">Voltorb</p>
           <div class="row">
             <div class="col-md-6"><p class="electric types">Electric</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon eletricp">
           <img class="img-thumbnail top" src="../Electrode.svg">
           <p class="name">Electrode</p>
           <div class="row">
             <div class="col-md-6"><p class="electric types">Electric</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon grassp psychicp">
           <img class="img-thumbnail top" src="../Exeggcute.svg">
           <p class="name">Exeggcute</p>
           <div class="row">
@@ -834,7 +848,7 @@
             <div class="col-md-6"><p class="psychic types">Psychic</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon grassp psychicp">
           <img class="img-thumbnail top" src="../Exeggutor.svg">
           <p class="name">Exeggutor</p>
           <div class="row">
@@ -842,56 +856,56 @@
             <div class="col-md-6"><p class="psychic types">Psychic</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon groundp">
           <img class="img-thumbnail top" src="../Cubone.svg">
           <p class="name">Cubone</p>
           <div class="row">
             <div class="col-md-6"><p class="ground types">Ground</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon groundp">
           <img class="img-thumbnail top" src="../Marowak.svg">
           <p class="name">Marowak</p>
           <div class="row">
             <div class="col-md-6"><p class="ground types">Ground</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon fightingp">
           <img class="img-thumbnail top" src="../Hitmonlee.svg">
           <p class="name">Hitmonlee</p>
           <div class="row">
             <div class="col-md-6"><p class="fighting types">Fighting</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon fightingp">
           <img class="img-thumbnail top" src="../Hitmonchan.svg">
           <p class="name">Hitmonchan</p>
           <div class="row">
             <div class="col-md-6"><p class="fighting types">Fighting</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp">
           <img class="img-thumbnail top" src="../Lickitung.svg">
           <p class="name">Lickitung</p>
           <div class="row">
             <div class="col-md-6"><p class="normal types">Normal</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon poisonp">
           <img class="img-thumbnail top" src="../Koffing.svg">
           <p class="name">Koffing</p>
           <div class="row">
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon poisonp">
           <img class="img-thumbnail top" src="../Weezing.svg">
           <p class="name">Weezing</p>
           <div class="row">
             <div class="col-md-6"><p class="poison types">Poison</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon groundp rockp">
           <img class="img-thumbnail top" src="../Rhyhorn.svg">
           <p class="name">Rhyhorn</p>
           <div class="row">
@@ -899,7 +913,7 @@
             <div class="col-md-6"><p class="rock types">Rock</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon groundp rockp">
           <img class="img-thumbnail top" src="../Rhydon.svg">
           <p class="name">Rhydon</p>
           <div class="row">
@@ -907,63 +921,63 @@
             <div class="col-md-6"><p class="rock types">Rock</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp">
           <img class="img-thumbnail top" src="../Chansey.svg">
           <p class="name">Chansey</p>
           <div class="row">
             <div class="col-md-6"><p class="normal types">Normal</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon grassp">
           <img class="img-thumbnail top" src="../Tangela.svg">
           <p class="name">Tangela</p>
           <div class="row">
             <div class="col-md-6"><p class="grass types">Grass</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp">
           <img class="img-thumbnail top" src="../Kangaskhan.svg">
           <p class="name">Kangaskhan</p>
           <div class="row">
             <div class="col-md-6"><p class="normal types">Normal</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Horsea.svg">
           <p class="name">Horsea</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Seadra.svg">
           <p class="name">Seadra</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Goldeen.svg">
           <p class="name">Goldeen</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Seaking.svg">
           <p class="name">Seaking</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Staryu.svg">
           <p class="name">Staryu</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp psychicp">
           <img class="img-thumbnail top" src="../Starmie.svg">
           <p class="name">Starmie</p>
           <div class="row">
@@ -971,7 +985,7 @@
             <div class="col-md-6"><p class="psychic types">Psychic</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon psychicp fairyp">
           <img class="img-thumbnail top" src="../Mr.Mime.svg">
           <p class="name">Mr. Mime</p>
           <div class="row">
@@ -979,7 +993,7 @@
             <div class="col-md-6"><p class="fairy types">Fairy</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon bugp flyingp">
           <img class="img-thumbnail top" src="../Scyther.svg">
           <p class="name">Scyther</p>
           <div class="row">
@@ -987,7 +1001,7 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon icep psychicp">
           <img class="img-thumbnail top" src="../Jynx.svg">
           <p class="name">Jynx</p>
           <div class="row">
@@ -995,42 +1009,42 @@
             <div class="col-md-6"><p class="psychic types">Psychic</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon electricp">
           <img class="img-thumbnail top" src="../Electabuzz.svg">
           <p class="name">Electabuzz</p>
           <div class="row">
             <div class="col-md-6"><p class="electric types">Electric</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon firep">
           <img class="img-thumbnail top" src="../Magmar.svg">
           <p class="name">Magmar</p>
           <div class="row">
             <div class="col-md-6"><p class="fire types">Fire</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon bugp">
           <img class="img-thumbnail top" src="../Pinsir.svg">
           <p class="name">Pinsir</p>
           <div class="row">
             <div class="col-md-6"><p class="bug types">Bug</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp">
           <img class="img-thumbnail top" src="../Tauros.svg">
           <p class="name">Tauros</p>
           <div class="row">
             <div class="col-md-6"><p class="normal types">Normal</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Magikarp.svg">
           <p class="name">Magikarp</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp flyingp">
           <img class="img-thumbnail top" src="../Gyarados.svg">
           <p class="name">Gyarados</p>
           <div class="row">
@@ -1038,7 +1052,7 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp icep">
           <img class="img-thumbnail top" src="../Lapras.svg">
           <p class="name">Lapras</p>
           <div class="row">
@@ -1046,49 +1060,49 @@
             <div class="col-md-6"><p class="ice types">Ice</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp">
           <img class="img-thumbnail top" src="../Ditto.svg">
           <p class="name">Ditto</p>
           <div class="row">
             <div class="col-md-6"><p class="normal types">Normal</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp">
           <img class="img-thumbnail top" src="../Eevee.svg">
           <p class="name">Eevee</p>
           <div class="row">
             <div class="col-md-6"><p class="normal types">Normal</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon waterp">
           <img class="img-thumbnail top" src="../Vaporeon.svg">
           <p class="name">Vaporeon</p>
           <div class="row">
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon electricp">
           <img class="img-thumbnail top" src="../Jolteon.svg">
           <p class="name">Jolteon</p>
           <div class="row">
             <div class="col-md-6"><p class="electric types">Electric</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon firep">
           <img class="img-thumbnail top" src="../Flareon.svg">
           <p class="name">Flareon</p>
           <div class="row">
             <div class="col-md-6"><p class="fire types">Fire</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp">
           <img class="img-thumbnail top" src="../Porygon.svg">
           <p class="name">Porygon</p>
           <div class="row">
             <div class="col-md-6"><p class="normal types">Normal</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon rockp waterp">
           <img class="img-thumbnail top" src="../Omanyte.svg">
           <p class="name">Omanyte</p>
           <div class="row">
@@ -1096,7 +1110,15 @@
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon rockp waterp">
+            <img class="img-thumbnail top" src="../Omastar.svg">
+            <p class="name">Omastar</p>
+            <div class="row">
+              <div class="col-md-6"><p class="rock types">Rock</p></div>
+              <div class="col-md-6"><p class="water types">Water</p></div>
+            </div>
+          </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon rockp waterp">
           <img class="img-thumbnail top" src="../Kabuto.svg">
           <p class="name">Kabuto</p>
           <div class="row">
@@ -1104,7 +1126,7 @@
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon rockp waterp">
           <img class="img-thumbnail top" src="../Kabutops.svg">
           <p class="name">Kabutops</p>
           <div class="row">
@@ -1112,7 +1134,7 @@
             <div class="col-md-6"><p class="water types">Water</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon rockp flyingp">
           <img class="img-thumbnail top" src="../Aerodactyl.svg">
           <p class="name">Aerodactyl</p>
           <div class="row">
@@ -1120,14 +1142,14 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon normalp">
           <img class="img-thumbnail top" src="../Snorlax.svg">
           <p class="name">Snorlax</p>
           <div class="row">
             <div class="col-md-6"><p class="normal types">Normal</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon icep flyingp">
           <img class="img-thumbnail top" src="../Articuno.svg">
           <p class="name">Articuno</p>
           <div class="row">
@@ -1135,7 +1157,7 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon electricp flyingp">
           <img class="img-thumbnail top" src="../Zapdos.svg">
           <p class="name">Zapdos</p>
           <div class="row">
@@ -1143,7 +1165,7 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon firep flyingp">
           <img class="img-thumbnail top" src="../Moltres.svg">
           <p class="name">Moltres</p>
           <div class="row">
@@ -1151,21 +1173,21 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon dragonp">
           <img class="img-thumbnail top" src="../Dratini.svg">
           <p class="name">Dratini</p>
           <div class="row">
             <div class="col-md-6"><p class="dragon types">Dragon</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon dragonp">
           <img class="img-thumbnail top" src="../Dragonair.svg">
           <p class="name">Dragonair</p>
           <div class="row">
             <div class="col-md-6"><p class="dragon types">Dragon</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon dragonp flyingp">
           <img class="img-thumbnail top" src="../Dragonite.svg">
           <p class="name">Dragonite</p>
           <div class="row">
@@ -1173,14 +1195,14 @@
             <div class="col-md-6"><p class="flying types">Flying</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon psychicp">
           <img class="img-thumbnail top" src="../Mewtwo.svg">
           <p class="name">Mewtwo</p>
           <div class="row">
             <div class="col-md-6"><p class="psychic types">Psychic</p></div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 pokemon psychicp">
           <img class="img-thumbnail top" src="../Mew.svg">
           <p class="name">Mew</p>
           <div class="row">
@@ -1193,6 +1215,67 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script>
+    //   $(document).ready(function(){
+    //   $("#searchinput").on("keyup", function() {
+    //     var value = $(this).val().toLowerCase();
+    //     $(".row *").filter(function() {
+    //       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    //     });
+    //   });
+    // });
+    // function filterSelection('grassp'){
+    //  if (document.body.classList.contains('grassp')) {
+    //    document.getElementsByClassName('grassp').style.display = "flex";
+    //  }
+    //  else {
+    //   document.getElementsByClassName('pokemon').style.display = "none";
+    //  }
+    // }
+    //
+    var poke = document.getElementById("pokeball");
+        poke.addEventListener("click", changeThemeP);
+    var great = document.getElementById("greatball");
+      great.addEventListener("click", changeThemeG);
+    var ultra = document.getElementById("ultraball");
+        ultra.addEventListener("click", changeThemeU);
+    var master = document.getElementById("masterball");
+        master.addEventListener("click", changeThemeM);
+    var premier = document.getElementById("premierball");
+        premier.addEventListener("click", changeThemePr);
+    var nav = document.getElementsByClassName("navbar");
+    var body = document.getElementsByTagName("body");
+    var search = document.getElementById("searchinput");
+    function changeThemeP(){
+        nav.style.backgroundColor = "#333333";
+        body.style.backgroundColor = "white";
+        search.style.backgroundColor = "#c8c8c8";
+        search.style.color = "#333333";
+      }
+    function changeThemeG(){
+        nav.style.backgroundColor = "#f15f5a";
+        body.style.backgroundColor = "#53a4cf";
+        search.style.backgroundColor = "#ffffff";
+      }
+     function changeThemeU(){
+        nav.style.backgroundColor = "#ebc266";
+        body.style.backgroundColor = "#333333";
+        search.style.backgroundColor = "#ffffff";
+        search.style.color = "#333333";
+      }
+      function changeThemeM(){
+        nav.style.backgroundColor = "#c971a0";
+        body.style.backgroundColor = "#ffffff";
+        search.style.backgroundColor = "#ffffff";
+        search.style.color = "#594c8c";
+      }
+      function changeThemePr(){
+        nav.style.backgroundColor = "#f15f5a";
+        body.style.backgroundColor = "#53a4cf";
+        search.style.backgroundColor = "#ffffff";
+        search.style.color = "#333333";
+      }
+        // i need this to show the whole div the pokemon is in, not just the name
+        // i will also need to be able to filter based on type
     </script>
   </body>
 </html>
