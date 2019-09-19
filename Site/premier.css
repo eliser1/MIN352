@@ -14,16 +14,16 @@
     color: white;
   }
   .navbar-light .navbar-brand:hover {
-    color: #c8c8c8;
+    color: #333333;
   }
   .navbar-light .navbar-nav .nav-link:hover {
-    color: #c8c8c8;
+    color: #333333;
   }
   .navbar-light .navbar-toggler:hover {
-    color: #c8c8c8;
+    color: #333333;
   }
   .navbar-light .navbar-nav .nav-link.active:hover {
-    color: #c8c8c8;
+    color: #333333;
   }
   .container {
     margin-top: 80px;
@@ -185,6 +185,7 @@
   .evol {
     border: 1px solid black;
     border-radius: 5px;
+    background: white;
   }
   .desc {
     font-family: 'Quicksand', sans-serif;

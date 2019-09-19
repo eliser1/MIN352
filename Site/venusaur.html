@@ -2,16 +2,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="poke.css">
+    <link id="stylesheet" rel="stylesheet" href="poke.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <a class="navbar-brand" href="pokedex.html">
-        <img src="../Pokeball.svg" width="30" height="30">
+        <img id="pokeicon" src="../Pokeball.svg" width="30" height="30">
       </a>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
@@ -21,13 +22,13 @@
     </nav>
     <div class="col-md-12 pinfo">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-lg-6 col-md-12">
           <img class="img-thumbnail" src="../Venusaur.svg">
         </div>
-        <div class="col-sm-6">
+        <div class="col-lg-6 col-md-12">
           <p class="name">Venusaur</p>
           <p class="number">&#x23;003</p>
-          <p>There is a large flower on Venusaur's back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower's aroma soothes the emotions of people.</p>
+          <p class="desc">There is a large flower on Venusaur's back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower's aroma soothes the emotions of people.</p>
           <p>Type&#40;s&#41;&#58;
           <div class="row">
             <div class="col-md-6"><p class="grass typesin">Grass</p></div>
@@ -47,5 +48,29 @@
         </div>
       </div>
     </div>
+    <script>
+
+        theme = localStorage.getItem("theme");
+        stylesheet.href = theme;
+  
+        var pokeicon = document.getElementById("pokeicon");
+        
+      if (theme === "poke.css") {
+        pokeicon.src = "../Pokeball.svg";
+      }
+      else if (theme === "great.css") {
+        pokeicon.src = "../GreatBall.svg";
+      }
+      else if (theme === "ultra.css") {
+        pokeicon.src = "../UltraBall.svg";
+      }
+      else if (theme === "master.css") {
+        pokeicon.src = "../MasterBall.svg";
+      }
+      else {
+        pokeicon.src = "../PremierBall.svg";
+      }
+      </script>
+  
   </body>
 </html>

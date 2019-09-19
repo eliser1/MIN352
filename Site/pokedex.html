@@ -1241,25 +1241,54 @@
     var pokeicon = document.getElementById("pokeicon");
     var stylesheet = document.getElementById("stylesheet");
 
+    theme = localStorage.getItem("theme");
+    stylesheet.href = theme;
+
+    if (theme === "poke.css") {
+      pokeicon.src = "../Pokeball.svg";
+    }
+    else if (theme === "great.css") {
+      pokeicon.src = "../GreatBall.svg";
+    }
+    else if (theme === "ultra.css") {
+      pokeicon.src = "../UltraBall.svg";
+    }
+    else if (theme === "master.css") {
+      pokeicon.src = "../MasterBall.svg";
+    }
+    else {
+      pokeicon.src = "../PremierBall.svg";
+    }
+
     function changeThemeP(){
-       stylesheet.href = "poke.css";
+        theme = "poke.css"
+        localStorage.setItem("theme","poke.css");
+        stylesheet.href = theme;
         pokeicon.src = "../Pokeball.svg"
       }
     function changeThemeG(){
-        stylesheet.href = "great.css";
+        theme = "great.css"
+        stylesheet.href = theme;
         pokeicon.src = "../GreatBall.svg"
+        localStorage.setItem("theme","great.css");
       }
      function changeThemeU(){
-        stylesheet.href = "ultra.css";
+        theme = "ultra.css"
+        stylesheet.href = theme;
         pokeicon.src = "../UltraBall.svg"
+        localStorage.setItem("theme","ultra.css");
       }
       function changeThemeM(){
-        stylesheet.href = "master.css";
+        theme = "master.css"
+        stylesheet.href = theme;
         pokeicon.src = "../MasterBall.svg"
+        localStorage.setItem("theme","master.css");
       }
       function changeThemePr(){
-        stylesheet.href = "premier.css";
+        theme = "premier.css"
+        stylesheet.href = theme;
         pokeicon.src = "../PremierBall.svg"
+        localStorage.setItem("theme","premier.css");
       }
         // i need this to show the whole div the pokemon is in, not just the name
         // i will also need to be able to filter based on type
