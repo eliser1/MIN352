@@ -58,26 +58,32 @@
     </div>
     <script>
 
-        theme = localStorage.getItem("theme");
-        stylesheet.href = theme;
-  
-        var pokeicon = document.getElementById("pokeicon");
-        
-      if (theme === "poke.css") {
-        pokeicon.src = "../Pokeball.svg";
-      }
-      else if (theme === "great.css") {
-        pokeicon.src = "../GreatBall.svg";
-      }
-      else if (theme === "ultra.css") {
-        pokeicon.src = "../UltraBall.svg";
-      }
-      else if (theme === "master.css") {
-        pokeicon.src = "../MasterBall.svg";
-      }
-      else {
-        pokeicon.src = "../PremierBall.svg";
-      }
+theme = localStorage.getItem("theme");
+      stylesheet.href = theme;
+
+      var pokeicon = document.getElementById("pokeicon");
+      theme = localStorage.getItem("theme");
+
+    if (theme === "poke.css") {
+      pokeicon.src = "../Pokeball.svg";
+    }
+    else if (theme === "great.css") {
+      pokeicon.src = "../GreatBall.svg";
+    }
+    else if (theme === "ultra.css") {
+      pokeicon.src = "../UltraBall.svg";
+    }
+    else if (theme === "master.css") {
+      pokeicon.src = "../MasterBall.svg";
+    }
+    else if (theme === "premier.css") {
+      pokeicon.src = "../PremierBall.svg";
+    }
+    else {
+      pokeicon.src = "../Pokeball.svg";
+      stylesheet.href = "poke.css";
+    }
+
       </script>
   
   </body>

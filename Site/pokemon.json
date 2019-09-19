@@ -1,0 +1,26 @@
+{
+    "Bulbasaur": {
+        "name": "Bulbasaur",
+        "img": "Bulbasaur.svg",
+        "type1": "grass",
+        "type2": "poison"
+        },
+    "Ivysaur": {
+        "name": "Ivysaur",
+        "img": "Ivysaur.svg",
+        "type1": "grass",
+        "type2": "poison"
+        },
+    "Venusaur": {
+        "name": "Venusaur",
+        "img": "Venusaur.svg",
+        "type1": "grass",
+        "type2": "poison"
+        },
+    "Charmander": {
+        "name": "Charmander",
+        "img": "Charmander.svg",
+        "type1": "fire",
+        "type2": null
+        }
+}

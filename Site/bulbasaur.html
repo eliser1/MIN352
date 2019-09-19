@@ -54,7 +54,8 @@
       stylesheet.href = theme;
 
       var pokeicon = document.getElementById("pokeicon");
-      
+      theme = localStorage.getItem("theme");
+
     if (theme === "poke.css") {
       pokeicon.src = "../Pokeball.svg";
     }
@@ -67,9 +68,14 @@
     else if (theme === "master.css") {
       pokeicon.src = "../MasterBall.svg";
     }
-    else {
+    else if (theme === "premier.css") {
       pokeicon.src = "../PremierBall.svg";
     }
+    else {
+      pokeicon.src = "../Pokeball.svg";
+      stylesheet.href = "poke.css";
+    }
+
     </script>
   </body>
 </html>

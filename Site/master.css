@@ -75,7 +75,7 @@
   }
   .img-thumbnail {
     background: white;
-    border: 1px solid #301710;
+    border: none;
   }
   .navbar-light .navbar-toggler {
       border: none;
@@ -163,9 +163,14 @@
   .dark {
     background: #707070;
   }
-  .top:hover {
-    cursor: pointer;
-    box-shadow: 5px 5px 5px #333333;
+  .col-lg-3 {
+    margin-bottom: 15px;
+  }
+  .border {
+    border: 1px solid #333333;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
   }
   .typesin {
     border-radius: 5px;
