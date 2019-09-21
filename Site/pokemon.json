@@ -3,24 +3,1057 @@
         "name": "Bulbasaur",
         "img": "Bulbasaur.svg",
         "type1": "grass",
-        "type2": "poison"
-        },
+        "type2": "poison",
+        "number": "#001"
+    },
     "Ivysaur": {
         "name": "Ivysaur",
         "img": "Ivysaur.svg",
         "type1": "grass",
-        "type2": "poison"
-        },
+        "type2": "poison",
+        "number": "#002"
+    },
     "Venusaur": {
         "name": "Venusaur",
         "img": "Venusaur.svg",
         "type1": "grass",
-        "type2": "poison"
-        },
+        "type2": "poison",
+        "number": "#003"
+    },
     "Charmander": {
         "name": "Charmander",
         "img": "Charmander.svg",
         "type1": "fire",
-        "type2": null
-        }
+        "type2": null,
+        "number": "#004"
+    },
+    "Charmeleon": {
+        "name": "Charmeleon",
+        "img": "Charmeleon.svg",
+        "type1": "fire",
+        "type2": null,
+        "number": "#005"
+    },
+    "Charizard": {
+        "name": "Charizard",
+        "img": "Charizard.svg",
+        "type1": "fire",
+        "type2": "dragon",
+        "number": "#006"
+    },
+    "Squirtle": {
+        "name": "Squirtle",
+        "img": "Squirtle.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#007"
+    },
+    "Wartortle": {
+        "name": "Wartortle",
+        "img": "Wartortle.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#008"
+    },
+    "Blastoise": {
+        "name": "Blastoise",
+        "img": "Blastoise.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#009"
+    },
+    "Caterpie": {
+        "name": "Caterpie",
+        "img": "Caterpie.svg",
+        "type1": "bug",
+        "type2": null,
+        "number": "#010"
+    },
+    "Metapod": {
+        "name": "Metapod",
+        "img": "Metapod.svg",
+        "type1": "bug",
+        "type2": null,
+        "number": "#011"
+    },
+    "Butterfree": {
+        "name": "Butterfree",
+        "img": "Butterfree.svg",
+        "type1": "bug",
+        "type2": "flying",
+        "number": "#012"
+    },
+    "Weedle": {
+        "name": "Weedle",
+        "img": "Weedle.svg",
+        "type1": "bug",
+        "type2": "poison",
+        "number": "#013"
+    },
+    "Kakuna": {
+        "name": "Kakuna",
+        "img": "Kakuna.svg",
+        "type1": "bug",
+        "type2": "poison",
+        "number": "#014"
+    },
+    "Beedrill": {
+        "name": "Beedrill",
+        "img": "Beedrill.svg",
+        "type1": "bug",
+        "type2": "poison",
+        "number": "#015"
+    },
+    "Pidgey": {
+        "name": "Pidgey",
+        "img": "Pidgey.svg",
+        "type1": "normal",
+        "type2": "flying",
+        "number": "#016"
+    },
+    "Pidgeotto": {
+        "name": "Pidgeotto",
+        "img": "Pidgeotto.svg",
+        "type1": "normal",
+        "type2": "flying",
+        "number": "#017"
+    },
+    "Pidgeot": {
+        "name": "Pidgeot",
+        "img": "Pidgeot.svg",
+        "type1": "normal",
+        "type2": "flying",
+        "number": "#018"
+    },
+    "Rattata": {
+        "name": "Rattata",
+        "img": "Rattata.svg",
+        "type1": "normal",
+        "type2": null,
+        "number": "#019"
+    },
+    "Raticate": {
+        "name": "Raticate",
+        "img": "Raticate.svg",
+        "type1": "normal",
+        "type2": null,
+        "number": "#020"
+    },
+    "Spearow": {
+        "name": "Spearow",
+        "img": "Spearow.svg",
+        "type1": "normal",
+        "type2": "flying",
+        "number": "#021"
+    },
+    "Fearow": {
+        "name": "Fearow",
+        "img": "Fearow.svg",
+        "type1": "normal",
+        "type2": "flying",
+        "number": "#022"
+    },
+    "Ekans": {
+        "name": "Ekans",
+        "img": "Ekans.svg",
+        "type1": "poison",
+        "type2": null,
+        "number": "#023"
+    },
+    "Arbok": {
+        "name": "Arbok",
+        "img": "Arbok.svg",
+        "type1": "poison",
+        "type2": null,
+        "number": "#024"
+    },
+    "Pikachu": {
+        "name": "Pikachu",
+        "img": "Pikachu.svg",
+        "type1": "electric",
+        "type2": null,
+        "number": "#025"
+    },
+    "Raichu": {
+        "name": "Raichu",
+        "img": "Raichu.svg",
+        "type1": "electric",
+        "type2": null,
+        "number": "#026"
+    },
+    "Sandshrew": {
+        "name": "Sandshrew",
+        "img": "Sandshrew.svg",
+        "type1": "ground",
+        "type2": null,
+        "number": "#027"
+    },
+    "Sandslash": {
+        "name": "Sandslash",
+        "img": "Sandslash.svg",
+        "type1": "ground",
+        "type2": null,
+        "number": "#028"
+    },
+    "Nidoran ♀": {
+        "name": "Nidoran",
+        "img": "NidoranF.svg",
+        "type1": "poison",
+        "type2": null,
+        "number": "#029"
+    },
+    "Nidorina": {
+        "name": "Nidorina",
+        "img": "Nidorina.svg",
+        "type1": "poison",
+        "type2": null,
+        "number": "#030"
+    },
+    "Nidoqueen": {
+        "name": "Nidoqueen",
+        "img": "Nidoqueen.svg",
+        "type1": "poison",
+        "type2": "ground",
+        "number": "#031"
+    },
+    "Nidoran ♂": {
+        "name": "Nidoran",
+        "img": "NidoranM.svg",
+        "type1": "poison",
+        "type2": null,
+        "number": "#032"
+    },
+    "Nidorino": {
+        "name": "Nidorino",
+        "img": "Nidorino.svg",
+        "type1": "poison",
+        "type2": null,
+        "number": "#033"
+    },
+    "Nidoking": {
+        "name": "Nidoking",
+        "img": "Nidoking.svg",
+        "type1": "poison",
+        "type2": "ground",
+        "number": "#034"
+    },
+    "Clefairy": {
+        "name": "Clefairy",
+        "img": "Clefairy.svg",
+        "type1": "fairy",
+        "type2": null,
+        "number": "#035"
+    },
+    "Clefable": {
+        "name": "Clefable",
+        "img": "Clefable.svg",
+        "type1": "fairy",
+        "type2": null,
+        "number": "#036"
+    },
+    "Vulpix": {
+        "name": "Vulpix",
+        "img": "Vulpix.svg",
+        "type1": "fire",
+        "type2": null,
+        "number": "#037"
+    },
+    "Ninetales": {
+        "name": "Nintales",
+        "img": "Ninetales.svg",
+        "type1": "fire",
+        "type2": null,
+        "number": "#038"
+    },
+    "Jigglypuff": {
+        "name": "Jigglypuff",
+        "img": "Jigglypuff.svg",
+        "type1": "normal",
+        "type2": "fairy",
+        "number": "#039"
+    },
+    "Wigglytuff": {
+        "name": "Wigglytuff",
+        "img": "Wigglytuff.svg",
+        "type1": "normal",
+        "type2": "fairy",
+        "number": "#040"
+    },
+    "Zubat": {
+        "name": "Zubat",
+        "img": "Zubat.svg",
+        "type1": "poison",
+        "type2": "flying",
+        "number": "#041"
+    },
+    "Golbat": {
+        "name": "Golbat",
+        "img": "Golbat.svg",
+        "type1": "poison",
+        "type2": "flying",
+        "number": "#042"
+    },
+    "Oddish": {
+        "name": "Oddish",
+        "img": "Oddish.svg",
+        "type1": "grass",
+        "type2": "poison",
+        "number": "#043"
+    },
+    "Gloom": {
+        "name": "Gloom",
+        "img": "Gloom.svg",
+        "type1": "grass",
+        "type2": "poison",
+        "number": "#044"
+    },
+    "Vileplume": {
+        "name": "Vileplume",
+        "img": "Vileplume.svg",
+        "type1": "grass",
+        "type2": "poison",
+        "number": "#045"
+    },
+    "Paras": {
+        "name": "Paras",
+        "img": "Paras.svg",
+        "type1": "bug",
+        "type2": "grass",
+        "number": "#046"
+    },
+    "Parasect": {
+        "name": "Parasect",
+        "img": "Parasect.svg",
+        "type1": "bug",
+        "type2": "grass",
+        "number": "#047"
+    },
+    "Venonat": {
+        "name": "Venonat",
+        "img": "Venonat.svg",
+        "type1": "bug",
+        "type2": "poison",
+        "number": "#048"
+    },
+    "Venomoth": {
+        "name": "Diglett",
+        "img": "Diglett.svg",
+        "type1": "bug",
+        "type2": "poison",
+        "number": "#049"
+    },
+    "Diglett": {
+        "name": "Diglett",
+        "img": "Diglett.svg",
+        "type1": "ground",
+        "type2": null,
+        "number": "#050"
+    },
+    "Dugtrio": {
+        "name": "Dugtrio",
+        "img": "Dugtrio.svg",
+        "type1": "ground",
+        "type2": null,
+        "number": "#051"
+    },
+    "Meowth": {
+        "name": "Meowth",
+        "img": "Meowth.svg",
+        "type1": "normal",
+        "type2": null,
+        "number": "#052"
+    },
+    "Persian": {
+        "name": "Persian",
+        "img": "Persian.svg",
+        "type1": "normal",
+        "type2": null,
+        "number": "#053"
+    },
+    "Psyduck": {
+        "name": "Psyduck",
+        "img": "Psyduck.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#054"
+    },
+    "Golduck": {
+        "name": "Golduck",
+        "img": "Golduck.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#055"
+    },
+    "Mankey": {
+        "name": "Mankey",
+        "img": "Mankey.svg",
+        "type1": "fighting",
+        "type2": null,
+        "number": "#056"
+    },
+    "Primeape": {
+        "name": "Primeape",
+        "img": "Primeape.svg",
+        "type1": "fighting",
+        "type2": null,
+        "number": "#057"
+    },
+    "Growlithe": {
+        "name": "Growlithe",
+        "img": "Growlithe.svg",
+        "type1": "fire",
+        "type2": null,
+        "number": "#058"
+    },
+    "Arcanine": {
+        "name": "Arcanine",
+        "img": "Arcanine.svg",
+        "type1": "fire",
+        "type2": null,
+        "number": "#059"
+    },
+    "Poliwag": {
+        "name": "Poliwag",
+        "img": "Poliwag.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#060"
+    },
+    "Poliwhirl": {
+        "name": "Poliwhirl",
+        "img": "Poliwhirl.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#061"
+    },
+    "Poliwrath": {
+        "name": "Poliwrath",
+        "img": "Poliwrath.svg",
+        "type1": "water",
+        "type2": "fighting",
+        "number": "#062"
+    },
+    "Abra": {
+        "name": "Abra",
+        "img": "Abra.svg",
+        "type1": "psychic",
+        "type2": null,
+        "number": "#063"
+    },
+    "Kadabra": {
+        "name": "Kadabra",
+        "img": "Kadabra.svg",
+        "type1": "psychic",
+        "type2": null,
+        "number": "#064"
+    },
+    "Alakazam": {
+        "name": "Alakazam",
+        "img": "Alakazam.svg",
+        "type1": "psychic",
+        "type2": null,
+        "number": "#065"
+    },
+    "Machop": {
+        "name": "Machop",
+        "img": "Machop.svg",
+        "type1": "fighting",
+        "type2": null,
+        "number": "#066"
+    },
+    "Machoke": {
+        "name": "Machoke",
+        "img": "Machoke.svg",
+        "type1": "fighting",
+        "type2": null,
+        "number": "#067"
+    },
+    "Machamp": {
+        "name": "Machamp",
+        "img": "Machamp.svg",
+        "type1": "fighting",
+        "type2": null,
+        "number": "#068"
+    },
+    "Bellsprout": {
+        "name": "Bellsprout",
+        "img": "Bellsprout.svg",
+        "type1": "grass",
+        "type2": "poison",
+        "number": "#069"
+    },
+    "Weepinbell": {
+        "name": "Weepinbell",
+        "img": "Weepinbell.svg",
+        "type1": "grass",
+        "type2": "poison",
+        "number": "#070"
+    },
+    "Victreebell": {
+        "name": "Victreebell",
+        "img": "Victreebell.svg",
+        "type1": "grass",
+        "type2": "poison",
+        "number": "#071"
+    },
+    "Tentacool": {
+        "name": "Tentacool",
+        "img": "Tentacool.svg",
+        "type1": "water",
+        "type2": "poison",
+        "number": "#072"
+    },
+    "Tentacruel": {
+        "name": "Tentacruel",
+        "img": "Tentacruel.svg",
+        "type1": "water",
+        "type2": "poison",
+        "number": "#073"
+    },
+    "Geodude": {
+        "name": "Geodude",
+        "img": "Geodude.svg",
+        "type1": "rock",
+        "type2": "ground",
+        "number": "#074"
+    },
+    "Graveler": {
+        "name": "Graveler",
+        "img": "Graveler.svg",
+        "type1": "rock",
+        "type2": "ground",
+        "number": "#075"
+    },
+    "Golem": {
+        "name": "Golem",
+        "img": "Golem.svg",
+        "type1": "rock",
+        "type2": "ground",
+        "number": "#076"
+    },
+    "Ponyta": {
+        "name": "Ponyta",
+        "img": "Ponyta.svg",
+        "type1": "fire",
+        "type2": null,
+        "number": "#077"
+    },
+    "Rapidash": {
+        "name": "Rapidash",
+        "img": "Rapidash.svg",
+        "type1": "fire",
+        "type2": null,
+        "number": "#078"
+    },
+    "Slowpoke": {
+        "name": "Slowpoke",
+        "img": "Slowpoke.svg",
+        "type1": "water",
+        "type2": "psychic",
+        "number": "#079"
+    },
+    "Slowbro": {
+        "name": "Slowbro",
+        "img": "Slowbro.svg",
+        "type1": "water",
+        "type2": "psychic",
+        "number": "#080"
+    },
+    "Magnemite": {
+        "name": "Magnemite",
+        "img": "Magnemite.svg",
+        "type1": "electric",
+        "type2": "steel",
+        "number": "#081"
+    },
+    "Magneton": {
+        "name": "Magneton",
+        "img": "Magneton.svg",
+        "type1": "electric",
+        "type2": "steel",
+        "number": "#082"
+    },
+    "Farfetch'd": {
+        "name": "Farfeth'd",
+        "img": "Farfetchd.svg",
+        "type1": "normal",
+        "type2": "flying",
+        "number": "#083"
+    },
+    "Doduo": {
+        "name": "Doduo",
+        "img": "Doduo.svg",
+        "type1": "normal",
+        "type2": "flying",
+        "number": "#084"
+    },
+    "Dodrio": {
+        "name": "Dodrio",
+        "img": "Dodrio.svg",
+        "type1": "normal",
+        "type2": "flying",
+        "number": "#085"
+    },
+    "Seel": {
+        "name": "Seel",
+        "img": "Seel.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#086"
+    },
+    "Dewgong": {
+        "name": "Dewgong",
+        "img": "Dewgong.svg",
+        "type1": "water",
+        "type2": "ice",
+        "number": "#087"
+    },
+    "Grimer": {
+        "name": "Grimer",
+        "img": "Grimer.svg",
+        "type1": "poison",
+        "type2": null,
+        "number": "#088"
+    },
+    "Muk": {
+        "name": "Muk",
+        "img": "Muk.svg",
+        "type1": "poison",
+        "type2": null,
+        "number": "#089"
+    },
+    "Shellder": {
+        "name": "Shellder",
+        "img": "Shellder.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#090"
+    },
+    "Cloyster": {
+        "name": "Cloyster",
+        "img": "Cloyster.svg",
+        "type1": "water",
+        "type2": "ice",
+        "number": "#091"
+    },
+    "Gastly": {
+        "name": "Gastly",
+        "img": "Gastly.svg",
+        "type1": "ghost",
+        "type2": "poison",
+        "number": "#092"
+    },
+    "Haunter": {
+        "name": "Haunter",
+        "img": "Haunter.svg",
+        "type1": "ghost",
+        "type2": "poison",
+        "number": "#093"
+    },
+    "Gengar": {
+        "name": "Gengar",
+        "img": "Gengar.svg",
+        "type1": "ghost",
+        "type2": "poison",
+        "number": "#094"
+    },
+    "Onix": {
+        "name": "Onix",
+        "img": "Onix.svg",
+        "type1": "rock",
+        "type2": "ground",
+        "number": "#095"
+    },
+    "Drowzee": {
+        "name": "Drowzee",
+        "img": "Drowzee.svg",
+        "type1": "psychic",
+        "type2": null,
+        "number": "#096"
+    },
+    "Hypno": {
+        "name": "Hypno",
+        "img": "Hypno.svg",
+        "type1": "psychic",
+        "type2": null,
+        "number": "#097"
+    },
+    "Krabby": {
+        "name": "Krabby",
+        "img": "Krabby.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#098"
+    },
+    "Kingler": {
+        "name": "Kingler",
+        "img": "Kingler.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#099"
+    },
+    "Voltorb": {
+        "name": "Voltorb",
+        "img": "Voltorb.svg",
+        "type1": "electric",
+        "type2": null,
+        "number": "#100"
+    },
+    "Electrode": {
+        "name": "Electrode",
+        "img": "Electrode.svg",
+        "type1": "electric",
+        "type2": null,
+        "number": "#101"
+    },
+    "Exeggcute": {
+        "name": "Exeggcute",
+        "img": "Exeggcute.svg",
+        "type1": "grass",
+        "type2": "psychic",
+        "number": "#102"
+    },
+    "Exeggutor": {
+        "name": "Exeggutor",
+        "img": "Exeggutor.svg",
+        "type1": "grass",
+        "type2": "psychic",
+        "number": "#103"
+    },
+    "Cubone": {
+        "name": "Cubone",
+        "img": "Cubone.svg",
+        "type1": "ground",
+        "type2": null,
+        "number": "#104"
+    },
+    "Marowak": {
+        "name": "Marowak",
+        "img": "Marowak.svg",
+        "type1": "ground",
+        "type2": null,
+        "number": "#105"
+    },
+    "Hitmonlee": {
+        "name": "Hitmonlee",
+        "img": "Hitmonlee.svg",
+        "type1": "fighting",
+        "type2": null,
+        "number": "#106"
+    },
+    "Hitmonchan": {
+        "name": "Hitmonchan",
+        "img": "Hitmonchan.svg",
+        "type1": "fighting",
+        "type2": null,
+        "number": "#107"
+    },
+    "Lickitung": {
+        "name": "Lickitung",
+        "img": "Lickitung.svg",
+        "type1": "normal",
+        "type2": null,
+        "number": "#108"
+    },
+    "Koffing": {
+        "name": "Koffing",
+        "img": "Koffing.svg",
+        "type1": "poison",
+        "type2": null,
+        "number": "#109"
+    },
+    "Weezing": {
+        "name": "Weezing",
+        "img": "Weezing.svg",
+        "type1": "poison",
+        "type2": null,
+        "number": "#110"
+    },
+    "Rhyhorn": {
+        "name": "Rhyhorn",
+        "img": "Rhyhorn.svg",
+        "type1": "ground",
+        "type2": "rock",
+        "number": "#111"
+    },
+    "Rhydon": {
+        "name": "Rhydon",
+        "img": "Rhydon.svg",
+        "type1": "ground",
+        "type2": "rock",
+        "number": "#112"
+    },
+    "Chansey": {
+        "name": "Chansey",
+        "img": "Chansey.svg",
+        "type1": "normal",
+        "type2": null,
+        "number": "#113"
+    },
+    "Tangela": {
+        "name": "Tangela",
+        "img": "Tangela.svg",
+        "type1": "grass",
+        "type2": null,
+        "number": "#114"
+    },
+    "Kangaskhan": {
+        "name": "Kangaskhan",
+        "img": "Kangkaskhan.svg",
+        "type1": "normal",
+        "type2": null,
+        "number": "#115"
+    },
+    "Horsea": {
+        "name": "Horsea",
+        "img": "Horsea.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#116"
+    },
+    "Seadra": {
+        "name": "Seadra",
+        "img": "Seadra.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#117"
+    },
+    "Goldeen": {
+        "name": "Goldeen",
+        "img": "Goldeen.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#118"
+    },
+    "Seaking": {
+        "name": "Seaking",
+        "img": "Seaking.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#119"
+    },
+    "Staryu": {
+        "name": "Staryu",
+        "img": "Staryu.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#120"
+    },
+    "Starmie": {
+        "name": "Starmie",
+        "img": "Starmie.svg",
+        "type1": "water",
+        "type2": "psychic",
+        "number": "#121"
+    },
+    "Mr. Mime": {
+        "name": "Mr. Mime",
+        "img": "Mr.Mime.svg",
+        "type1": "psychic",
+        "type2": "fairy",
+        "number": "#122"
+    },
+    "Scyther": {
+        "name": "Scyther",
+        "img": "Scyther.svg",
+        "type1": "bug",
+        "type2": "flying",
+        "number": "#123"
+    },
+    "Jynx": {
+        "name": "Jynx",
+        "img": "Jynx.svg",
+        "type1": "ice",
+        "type2": "psychic",
+        "number": "#124"
+    },
+    "Electabuzz": {
+        "name": "Electabuzz",
+        "img": "Electabuzz.svg",
+        "type1": "electric",
+        "type2": null,
+        "number": "#125"
+    },
+    "Magmar": {
+        "name": "Magmar",
+        "img": "Magmar.svg",
+        "type1": "fire",
+        "type2": null,
+        "number": "#126"
+    },
+    "Pinsir": {
+        "name": "Pinsir",
+        "img": "Pinsir.svg",
+        "type1": "bug",
+        "type2": null,
+        "number": "#127"
+    },
+    "Tauros": {
+        "name": "Tauros",
+        "img": "Tauros.svg",
+        "type1": "normal",
+        "type2": null,
+        "number": "#128"
+    },
+    "Magikarp": {
+        "name": "Magikarp",
+        "img": "Magikarp.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#129"
+    },
+    "Gyarados": {
+        "name": "Gyarados",
+        "img": "Gyarados.svg",
+        "type1": "water",
+        "type2": "flying",
+        "number": "#130"
+    },
+    "Lapras": {
+        "name": "Lapras",
+        "img": "Lapras.svg",
+        "type1": "water",
+        "type2": "ice",
+        "number": "#131"
+    },
+    "Ditto": {
+        "name": "Ditto",
+        "img": "Ditto.svg",
+        "type1": "normal",
+        "type2": null,
+        "number": "#132"
+    },
+    "Eevee": {
+        "name": "Eevee",
+        "img": "Eevee.svg",
+        "type1": "normal",
+        "type2": null,
+        "number": "#133"
+    },
+    "Vaporeon": {
+        "name": "Vaporeon",
+        "img": "Vaporeon.svg",
+        "type1": "water",
+        "type2": null,
+        "number": "#134"
+    },
+    "Jolteon": {
+        "name": "Jolteon",
+        "img": "Jolteon.svg",
+        "type1": "electric",
+        "type2": null,
+        "number": "#135"
+    },
+    "Flareon": {
+        "name": "Flareon",
+        "img": "Flareon.svg",
+        "type1": "fire",
+        "type2": null,
+        "number": "#136"
+    },
+    "Porygon": {
+        "name": "Porygon",
+        "img": "Porygon.svg",
+        "type1": "normal",
+        "type2": null,
+        "number": "#137"
+    },
+    "Omanyte": {
+        "name": "Omanyte",
+        "img": "Omanyte.svg",
+        "type1": "rock",
+        "type2": "water",
+        "number": "#138"
+    },
+    "Omastar": {
+        "name": "Omastar",
+        "img": "Omastar.svg",
+        "type1": "rock",
+        "type2": "water",
+        "number": "#139"
+    },
+    "Kabuto": {
+        "name": "Kabuto",
+        "img": "Kabuto.svg",
+        "type1": "rock",
+        "type2": "Water",
+        "number": "#140"
+    },
+    "Kabutops": {
+        "name": "Kabutops",
+        "img": "Kabutops.svg",
+        "type1": "rock",
+        "type2": "Water",
+        "number": "#141"
+    },
+    "Aerodactyl": {
+        "name": "Aerodactyl",
+        "img": "Aerodactyl.svg",
+        "type1": "rock",
+        "type2": "flying",
+        "number": "#142"
+    },
+    "Snorlax": {
+        "name": "Snorlax",
+        "img": "Snorlax.svg",
+        "type1": "normal",
+        "type2": null,
+        "number": "#143"
+    },
+    "Articuno": {
+        "name": "Articuno",
+        "img": "Articuno.svg",
+        "type1": "ice",
+        "type2": "flying",
+        "number": "#144"
+    },
+    "Zapdos": {
+        "name": "Zapdos",
+        "img": "Zapdos.svg",
+        "type1": "electric",
+        "type2": "flying",
+        "number": "#145"
+    },
+    "Moltres": {
+        "name": "Moltres",
+        "img": "Moltres.svg",
+        "type1": "fire",
+        "type2": "flying",
+        "number": "#146"
+    },
+    "Dratini": {
+        "name": "Dratini",
+        "img": "Dratini.svg",
+        "type1": "dragon",
+        "type2": null,
+        "number": "#147"
+    },
+    "Dragonair": {
+        "name": "Dragonair",
+        "img": "Dragonair.svg",
+        "type1": "dragon",
+        "type2": null,
+        "number": "#148"
+    },
+    "Dragonite": {
+        "name": "Dragonite",
+        "img": "Dragonite.svg",
+        "type1": "dragon",
+        "type2": "flying",
+        "number": "#149"
+    },
+    "Mewtwo": {
+        "name": "Mewtwo",
+        "img": "Mewtwo.svg",
+        "type1": "psychic",
+        "type2": null,
+        "number": "#150"
+    },
+    "Mew": {
+        "name": "Mew",
+        "img": "Mew.svg",
+        "type1": "psychic",
+        "type2": null,
+        "number": "#151"
+    }
 }
