@@ -13,17 +13,17 @@
         "Metapod"
     ],
     "img": [
-        "Bulbasaur.svg",
-        "Ivysaur.svg",
-        "Venusaur.svg",
-        "Charmander.svg",
-        "Charmeleon.svg",
-        "Charizard.svg",
-        "Squirtle.svg",
-        "Wartortle.svg",
-        "Blastoise.svg",
-        "Caterpie.svg",
-        "Metapod.svg"
+        "../Bulbasaur.svg",
+        "../Ivysaur.svg",
+        "../Venusaur.svg",
+        "../Charmander.svg",
+        "../Charmeleon.svg",
+        "../Charizard.svg",
+        "../Squirtle.svg",
+        "../Wartortle.svg",
+        "../Blastoise.svg",
+        "../Caterpie.svg",
+        "../Metapod.svg"
     ],
     "type1": [
         "grass",
