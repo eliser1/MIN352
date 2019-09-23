@@ -1,0 +1,67 @@
+{
+    "name": [
+        "Bulbasaur",
+        "Ivysaur",
+        "Venusaur",
+        "Charmander",
+        "Charmeleon",
+        "Charizard",
+        "Squirtle",
+        "Wartortle",
+        "Blastoise",
+        "Caterpie",
+        "Metapod"
+    ],
+    "img": [
+        "Bulbasaur.svg",
+        "Ivysaur.svg",
+        "Venusaur.svg",
+        "Charmander.svg",
+        "Charmeleon.svg",
+        "Charizard.svg",
+        "Squirtle.svg",
+        "Wartortle.svg",
+        "Blastoise.svg",
+        "Caterpie.svg",
+        "Metapod.svg"
+    ],
+    "type1": [
+        "grass",
+        "grass",
+        "grass",
+        "fire",
+        "fire",
+        "fire",
+        "water",
+        "water",
+        "Water",
+        "bug",
+        "bug"
+    ],
+    "type2": [
+        "poison",
+        "poison",
+        "poison",
+        null,
+        null,
+        "dragon",
+        null,
+        null,
+        null,
+        null,
+        null
+    ],
+    "number": [
+        "#001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009",
+        "010",
+        "011"
+    ]
+}
