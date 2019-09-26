@@ -1,50 +1,180 @@
-      var row = document.getElementById("header");
-      var requestURL = 'https://eliser1.github.io/MIN352/Site/pokemon.json';
-      var request = new XMLHttpRequest();
-      request.open('GET', requestURL);
-      request.responseType = 'json';
-      request.send();
+    // make the background colors of the imgs all slightly transparent
+    // send json info to doc
+    
+    var row = document.getElementById("header");
+    var requestURL = 'https://eliser1.github.io/MIN352/Site/pokemon.json';
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
 
-      request.onload = function() {
-        var pokemonData = request.response;
-        showPokemon(pokemonData);
-      }
+    request.onload = function() {
+      var pokemonData = request.response;
+      showPokemon(pokemonData);
+    }
 
+   // pokemon colors based on type
 
-      function showPokemon(jsonObj) {
+    var grassColor = "rgba(155, 204, 80, 0.375)";
+
+    var poisonColor = "rgba(185, 127, 201, 0.375)";
+
+    var fireColor = "rgba(253, 125, 36, 0.375)";
+
+    var flyingColor = "linear-gradient(180deg, rgba(61, 199, 239, 0.375) 50%, rgba(189, 185, 184, 0.375) 50%)";
+
+    var waterColor = "rgba(69, 146, 196, 0.375)";
+
+    var bugColor = "rgba(114, 159, 63, 0.375)";
+
+    var normalColor = "rgba(164, 172, 175, 0.375)";
+
+    var electricColor = "rgba(238, 213, 53, 0.375)";
+
+    var groundColor = "linear-gradient(180deg, rgba(238, 213, 53, 0.375) 50%, rgba(171, 152, 66, 0.375) 50%)";
+
+    var fairyColor = "rgba(253, 185, 233, 0.375)";
+
+    var psychicColor = "rgba(243, 102, 185, 0.375)";
+
+    var fightingColor = "rgba(213, 103, 35, 0.375)";
+
+    var rockColor = "rgba(163, 140, 33, 0.375)";
+
+    var steelColor = "rgba(158, 183, 184, 0.375)";
+
+    var iceColor = "rgba(81, 196, 231, 0.375)";
+
+    var ghostColor = "rgba(123, 98, 163, 0.375)";
+
+    var dragonColor = "linear-gradient(180deg, rgba(83, 164, 207, 0.375) 50%, rgba(241, 95, 90, 0.375) 50%)";
+
+    var darkColor = "rgba(112, 112, 112, 0.375)";
+
+    function showPokemon(jsonObj) {
+      var pokemon = jsonObj;
+      var myRow = document.getElementById('mainrow');
+
+      for (var i = 0; i < pokemon.name.length; i++) {
         var pokemon = jsonObj;
-        console.log(pokemon);
-        for (var i = 0; i < pokemon.length; i++) {
-          var myDiv = document.createElement('div');
-            myDiv.classList.add("col-lg-3").add("col-md-4").add("col-sm-4").add("pokemon");
-          var myImg = document.createElement('img');
-            myImg.classList.add("img-thumbnail");
-            myImg.src = jsonObj['img'];
-          var myH2 = document.createElement('h2');
-            myH2.classList.add("name");
-          var myNumber = document.createElement('p');
-            myNumber.classList.add("number");
-          var myTypeRow = document.createElement('div');
-            myTypeRow.classList.add("row");
-          var myType1 = document.createElement('div');
-            myType1.classList.add(jsonObj['type1']);
-          var myType2 = document.createElement('div');
-            myType2.classList.add(jsonObj['type2']);
+        var myDiv = document.createElement('div');
+          myDiv.classList.add("col-lg-3");
+          myDiv.classList.add("col-sm-4");
+          myDiv.classList.add("pokemon");
+          if (jsonObj.type2[i] == null) {
+            var type1 = jsonObj.type1[i] + "p";
+            myDiv.classList.add(type1);
+          }
+          else {
+            var type1 = jsonObj.type1[i] + "p";
+            var type2 = jsonObj.type2[i] + "p";
+            myDiv.classList.add(type1);
+            myDiv.classList.add(type2);
+          }
+        var myAnchor = document.createElement('a');
+          myAnchor.href = jsonObj.name[i] + ".html";
+        var myImg = document.createElement('img');
+          myImg.classList.add("img-thumbnail");
+          myImg.src = "../" + jsonObj.name[i] + ".svg";
+        var myH2 = document.createElement('h2');
+          myH2.classList.add("name");
+        var myNumber = document.createElement('p');
+          myNumber.classList.add("number");
 
-          myH2.textContent = pokemon[i].name;
-          myNumber.textContent = pokemon[i].number;
-          myType1.textContent = pokemon[i].type1;
-          myType2.textContent = pokemon[i].type2;
-          
-          myDiv.appendChild(myImg);
-          myDiv.appendChild(myH2);
-          myDiv.appendChild(myNumber);
-          myDiv.appendChild(myType1);
-          myDiv.appendChild(myType2);
+        myH2.textContent = pokemon.name[i];
+        myNumber.textContent = pokemon.number[i];
 
-          section.appendChild(myDiv);
+        myAnchor.appendChild(myImg);
+        myDiv.appendChild(myAnchor);
+        myDiv.appendChild(myH2);
+        myDiv.appendChild(myNumber);
+        
+        myRow.appendChild(myDiv);
+
+        if (jsonObj.type2[i] == null) {
+          myImg.style.background = eval(jsonObj.type1[i] + "Color");
+        }
+        else {
+          var color1 = eval(jsonObj.type1[i] + "Color");
+          var color2 = eval(jsonObj.type2[i] + "Color");
+            if ((color1 == dragonColor) && (color2 == flyingColor)) {
+              myImg.style.background = "linear-gradient(180deg, rgba(83, 164, 207, 0.375) 25%, rgba(241, 95, 90, 0.375) 25% 50%, rgba(61, 199, 239, 0.375) 50% 75%, rgba(189, 185, 184, 0.375) 75%)";
+            }  
+
+            else if (color1 == flyingColor) {
+              myImg.style.background = "linear-gradient(180deg, rgba(61, 199, 239, 0.375) 25%, rgba(189, 185, 184, 0.375) 25% 50%, " + color2 +" 50%)";
+            }
+            else if (color2 == flyingColor) {
+              myImg.style.background = "linear-gradient(180deg, " + color1 + " 50%, rgba(61, 199, 239, 0.375) 50% 75%, rgba(189, 185, 184, 0.375) 75%)";
+            }
+            else if (color1 == groundColor) {
+              myImg.style.background = "linear-gradient(180deg, rgba(238, 213, 53, 0.375) 25%, rgba(171, 152, 66, 0.375) 25% 50%, " + color2 +" 50%)";
+            }
+            else if (color2 == groundColor) {
+              myImg.style.background = "linear-gradient(180deg, " + color1 + " 50%, rgba(238, 213, 53, 0.375) 50% 75%, rgba(171, 152, 66, 0.375) 75%)";
+            }
+            else if (color1 == dragonColor) {
+              myImg.style.background = "linear-gradient(180deg, rgba(83, 164, 207, 0.375) 25%, rgba(241, 95, 90, 0.375) 25% 50%, " + color2 +" 50%)";
+            }
+            else if (color2 == dragonColor) {
+              myImg.style.background = "linear-gradient(180deg, " + color1 + " 50%, rgba(83, 164, 207, 0.375) 50% 75%, rgba(241, 95, 90, 0.375) 75%)";
+            }
+            else {
+              myImg.style.background = "linear-gradient(180deg, " + color1 + " 50%, " + color2 + " 50%)";
+            }
+        }
       }
     }
+
+    // create info sheets
+      // use js to completely create html files with json data?
+    // filter functions
+
+    filterSelection('all');
+
+    function filterSelection(c) {
+      var i;
+      x = document.getElementsByClassName("pokemon");
+      if (c=="all") {
+        c="";
+       }
+      for (i = 0; i < x.length; i++) {
+        removeClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) {
+          addClass(x[i], "show");
+        }
+      }
+    }
+
+    function addClass(element, name) {
+      var i;
+      var arr1 = element.className.split(" ");
+      // arr1 is all pokemon that match the type needed
+      var arr2 = name.split(" ");
+      // ".show"
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {
+          element.className += " " + arr2[i];
+        }
+      }
+    }
+
+    function removeClass(element, name) {
+      var i;
+      var arr1 = element.className.split(" ");
+      // console.log(element.className.split(" "));
+      // arr1 here is all pokemon of all types
+      var arr2 = name.split(" ");
+      for (i=0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+
+    // search functions
+    // change themes functions
 
       document.getElementById("pokeball").addEventListener("click", changeThemeP);
       document.getElementById("greatball").addEventListener("click", changeThemeG);

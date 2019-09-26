@@ -1,6 +1,9 @@
 .navbar {
     background: #c971a0;
   }
+  h2 {
+    text-align: center;
+  }
   .navbar-light .navbar-brand {
     color: white;
   }
@@ -32,12 +35,11 @@
     color: white;
   }
   body {
-    font-family: 'Quicksand', sans-serif;
     height: 100%;
     line-height: 1.5;
     user-select: none;
-    background: #ffffff;
-    color: #333333;
+    background: #594c8c;
+    color: #ffffff;
     font-family: pokemon;
   }
   p {
@@ -81,14 +83,13 @@
       border: none;
   }
   .types {
-    border-radius: 5px;
+    border-radius: 20px;
     color: white;
-    width: 100%;
     float: left;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding: 0.5em;
     text-align: center;
-    border: 1px solid #333333;
+    border: 5px solid #594c8c;
+    font-size: 0.75em;
   }
   .typesdrop {
     border-radius: 5px;
@@ -102,9 +103,8 @@
     border: 1px solid #333333;
   }
   .name {
-    font-family: Raleway;
-    font-size: 1.5em;
-    margin: 0.25em;
+    margin-top: 10px;
+    font-size: 1em;
   }
   .all {
     background: #333333;
@@ -166,8 +166,8 @@
   .col-lg-3 {
     margin-bottom: 15px;
   }
-  .border {
-    border: 1px solid #333333;
+  .pborder {
+    border: 1px solid #ffffff;
     border-radius: 5px;
     margin: 5px;
     padding: 5px;
@@ -180,7 +180,6 @@
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     text-align: center;
-    border: 1px solid #333333;
   }
   .pinfo {
     font-size: 0.875em;
@@ -188,26 +187,18 @@
     margin-bottom: 20px;
   }
   .evol {
-    border: 1px solid black;
     border-radius: 5px;
     background: white;
   }
   .desc {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1.5em;
+    font-size: 1em;
   }
-  /* #pokeball {
-    background: linear-gradient(180deg, #f15f5a 50%, #333333 50%);
+  .row {
+    align-content: center;
   }
-  #greatball {
-    background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+  .pokemon {
+    display: none;
   }
-  #ultraball {
-    background: linear-gradient(180deg, #ebc266 50%, #333333 50%);
+  .show {
+    display: block;
   }
-  #masterball {
-    background: linear-gradient(180deg, #c971a0 50%, #594c8c 50%);
-  }
-  #premierball {
-    background: linear-gradient(180deg, white 50%, #f15f5a 50%);
-  } */
