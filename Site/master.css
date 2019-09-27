@@ -202,3 +202,35 @@
   .show {
     display: block;
   }
+  .outertext {
+    border: 1px solid #333333;
+    border-radius: 5px;
+  }
+  .innertext {
+    border: 1px solid #333333;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .hovertext:hover {
+    font-size: 1em;
+    cursor: pointer;
+  }
+  #oakhelp {
+    display: none;
+  }
+  #oakcustom {
+    display: none;
+  }
+  #oaksort {
+    display: none;
+  }
+  #oaksearch {
+    display: none;
+  }
+  #oakinfo {
+    display: none;
+  }
+  #oakbegin {
+    display: none;
+  }

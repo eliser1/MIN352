@@ -1,5 +1,7 @@
 <!-- when using dropdown, not hovering on the text up top turns it black -->
-<!-- sort by type buttons, function showOnlyType() to show only those -->
+<!-- /* on prof oak, i would like to have a typewriter effect for text */
+/* also need to adjust oak size so that he matches size with text */ -->
+<!-- lots of empty space in text boxes -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -14,7 +16,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <a class="navbar-brand" href="#">
-        <img id="pokeicon" src="../Pokeball.svg" width="30" height="30">
+        <img id="pokeicon" src="../pokeball.svg" width="30" height="30">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="material-icons">
@@ -63,6 +65,128 @@
         </form>
       </div>
     </nav>
+    <div id="oakhome" class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <img src="../ProfOakStand.svg">
+        </div>
+        <div class="col-sm-8 outertext">
+            <p>Hello there! Glad to meet you.</p>
+            <p>Welcome to the world of POKÉMON.</p>
+            <p>My name is OAK.</p>
+            <p>People affectionately refer to me as the POKÉMON PROFESSOR.</p>
+            <p>This world is inhabited far and wide by creatures called POKÉMON</p>
+            <p>For some people, POKÉMON are pets.</p>
+            <p>Others may use them for battle.</p>
+            <p>As for myself... I study POKÉMON as a profession.</p>
+            <p>This is called a POKÉDEX.</p>
+            <p>All POKÉMON encountered in this world are registered into this device to give us more information on the POKÉMON around us.</p>
+            <p>Would you like help navigating your POKÉDEX?</p>
+            <br>
+            <p class="hovertext" onclick="showHelp()">Yes</p>
+            <p class="hovertext" onclick="showEnd()">No</p>
+        </div>
+      </div>
+    </div>
+    <div id="oakhelp" class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <img src="../ProfOakStand.svg">
+          </div>
+          <div class="col-sm-8 outertext">
+              <p>I would be happy to help!</p>
+              <p>What would you like to know about?</p>
+              <p class="hovertext" onclick="showCustom()">Customization</p>
+              <p class="hovertext" onclick="showSort()">Sort</p>
+              <p class="hovertext" onclick="showSearch()">Search</p>
+              <p class="hovertext" onclick="showInfo()">Information</p>
+              <br>
+              <p id="ready" class="hovertext" onclick="showEnd()">I'm ready to go!</p>
+          </div>
+        </div>
+      </div>
+    <div id="oakcustom" class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <img src="../ProfOakPoint.svg">
+          </div>
+          <div class="col-sm-8 outertext">
+              <p>Your POKÉDEX is a customizable tool to help both you and I learn about POKÉMON around us.</p>
+              <p>You can change the THEME of your POKÉDEX by selecting the CHANGE THEME button above.</p>
+              <p>Each THEME available is based on different types of POKÉBALLS available to you in this world.</p>
+              <p>Each POKÉBALL has different colors and designs, but most importantly, different strengths and abilities.</p>
+              <p>Would you like to learn more?</p>
+              <br>
+              <p class="hovertext" onclick="showHelp()">Yes</p>
+              <p class="hovertext" onclick="showEnd()">No</p>              
+          </div>
+        </div>
+      </div>
+    <div id="oaksort" class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <img src="../ProfOakPoint.svg">
+          </div>
+          <div class="col-sm-8 outertext">
+              <p>Each POKÉMON has one or two elemental TYPES.</p>
+              <p>These TYPES can determines different MOVESETS that the POKÉMON can use, as well as what TYPES they are WEAK to.</p>
+              <p>You can filter the POKÉMON that appear in your POKÉDEX by their type by using the SORT BY TYPE  button above.</p>
+              <p>Selecting a TYPE will show only POKÉMON that are that type.</p>
+              <p>Would you like to learn more?</p>
+              <br>
+              <p class="hovertext" onclick="showHelp()">Yes</p>
+              <p class="hovertext" onclick="showEnd()">No</p>
+          </div>
+        </div>
+      </div>
+    <div id="oaksearch" class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <img src="../ProfOakPoint.svg">
+          </div>
+          <div class="col-sm-8 outertext">
+              <p>All POKÉMON are given a unique NAME.</p>
+              <p>Using the search bar above, you can locate a POKÉMON based on its name.</p>
+              <p>The SEARCH will be done automatically, so you may see multiple POKÉMON if their names begin the same way.</p>
+              <p>Would you like to learn more?</p>
+              <br>
+              <p class="hovertext" onclick="showHelp()">Yes</p>
+              <p class="hovertext" onclick="showEnd()">No</p>
+          </div>
+        </div>
+      </div>
+      <div id="oakinfo" class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <img src="../ProfOakPoint.svg">
+            </div>
+            <div class="col-sm-8 outertext">
+                <p>Each POKÉMON has different WEAKNESSES.</p>
+                <p>Knowing these WEAKNESSES especially can be helpful in BATTLE.</p>
+                <p>By clicking on the IMAGE of a POKÉMON, you will see more INFORMATION about them.</p>
+                <p>From here, you can also see the EVOLUTIONS of the POKÉMON by clicking on the IMAGE of their EVOLUTIONS.</p>
+                <p>You can return to the HOME of the POKÉDEX by clicking either the HOME button above or the POKÉBALL icon.</p>
+                <p>Would you like to learn more?</p>
+                <br>
+                <p class="hovertext" onclick="showHelp()">Yes</p>
+                <p class="hovertext" onclick="showEnd()">No</p>
+            </div>
+          </div>
+        </div>
+    <div id="oakbegin" class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <img src="../ProfOakStand.svg">
+          </div>
+          <div class="col-sm-8 outertext">
+              <p>Your very own POKÉMON legend is about to unfold!</p>
+              <p>A world of dreams and adventures awaits you.</p>
+              <p>Let's go!</p>
+              <br>
+              <p id="begin" class="hovertext" onclick="filterSelection('all')">Begin</p>
+          </div>
+        </div>
+      </div>
     <div class="container">
       <div id="mainrow" class="row">
 

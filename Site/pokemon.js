@@ -128,11 +128,84 @@
 
     // create info sheets
       // use js to completely create html files with json data?
-    // filter functions
 
-    filterSelection('all');
+      // Prof Oak    
+    var oakhome = document.getElementById("oakhome");
+    var oakhelp = document.getElementById("oakhelp");
+      var ready = document.getElementById("ready");
+    var oakcustom = document.getElementById("oakcustom");
+    var oaksort = document.getElementById("oaksort");
+    var oaksearch = document.getElementById("oaksearch");
+    var oakinfo = document.getElementById("oakinfo");
+    var oakbegin = document.getElementById("oakbegin");
+      var begin = document.getElementById("begin");
+
+        function showHelp() {
+          oakhome.style.display = "none";
+          oakhelp.style.display = "block";
+          oakcustom.style.display = "none";
+          oaksort.style.display = "none";
+          oaksearch.style.display = "none";
+          oakinfo.style.display = "none";
+          oakbegin.style.display = "none";
+        }
+        function showCustom() {
+          oakhome.style.display = "none";
+          oakhelp.style.display = "none";
+          oakcustom.style.display = "block";
+          oaksort.style.display = "none";
+          oaksearch.style.display = "none";
+          oakinfo.style.display = "none";
+          oakbegin.style.display = "none";
+        }
+        function showSort() {
+          oakhome.style.display = "none";
+          oakhelp.style.display = "none";
+          oakcustom.style.display = "none";
+          oaksort.style.display = "block";
+          oaksearch.style.display = "none";
+          oakinfo.style.display = "none";
+          oakbegin.style.display = "none";
+        }
+        function showSearch() {
+          oakhome.style.display = "none";
+          oakhelp.style.display = "none";
+          oakcustom.style.display = "none";
+          oaksort.style.display = "none";
+          oaksearch.style.display = "block";
+          oakinfo.style.display = "none";
+          oakbegin.style.display = "none";
+        }
+        function showInfo() {
+          oakhome.style.display = "none";
+          oakhelp.style.display = "none";
+          oakcustom.style.display = "none";
+          oaksort.style.display = "none";
+          oaksearch.style.display = "none";
+          oakinfo.style.display = "block";
+          oakbegin.style.display = "none";
+        }
+        function showEnd(){
+          oakhome.style.display = "none";
+          oakhelp.style.display = "none";
+          oakcustom.style.display = "none";
+          oaksort.style.display = "none";
+          oaksearch.style.display = "none";
+          oakinfo.style.display = "none";
+          oakbegin.style.display = "block";
+        }
+        
 
     function filterSelection(c) {
+
+      oakhome.style.display = "none";
+      oakhelp.style.display = "none";
+      oakcustom.style.display = "none";
+      oaksort.style.display = "none";
+      oaksearch.style.display = "none";
+      oakinfo.style.display = "none";
+      oakbegin.style.display = "none";
+
       var i;
       x = document.getElementsByClassName("pokemon");
       if (c=="all") {
