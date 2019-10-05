@@ -43,7 +43,7 @@
 
     var steelColor = "rgba(158, 183, 184, 0.375)";
 
-    var iceColor = "rgba(81, 196, 231, 0.375)";
+    var iceColor = "rgba(81, 1, 231, 0.375)";
 
     var ghostColor = "rgba(123, 98, 163, 0.375)";
 
@@ -247,7 +247,26 @@
     }
 
     // search functions
-    // change themes functions
+
+    function searchFunction() {
+      // Declare variables
+      var input, filter, div, poke, h2, i, txtValue;
+      input = document.getElementById('searchinput');
+      filter = input.value.toUpperCase();
+      div = document.getElementById("mainrow");
+      poke = div.getElementsByClassName('pokemon');
+
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < poke.length; i++) {
+        h2 = poke[i].getElementsByTagName("h2")[0];
+        txtValue = h2.textContent || h2.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          poke[i].style.display = "";
+        } else {
+          poke[i].style.display = "none";
+        }
+      }
+    }
 
       document.getElementById("pokeball").addEventListener("click", changeThemeP);
       document.getElementById("greatball").addEventListener("click", changeThemeG);
