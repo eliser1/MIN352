@@ -60,18 +60,27 @@
               <a class="dropdown-item typesdrop dark" id="dark" href="#" onclick="filterSelection('dark')">Dark</a>
             </div>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Help</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item themes" onclick="showCustom()">Customization</a>
+            <a class="dropdown-item themes" onclick="showSort()">Sort</a>
+            <a class="dropdown-item themes" onclick="showSearch()">Search</a>
+            <a class="dropdown-item themes" onclick="showInfo()">Information</a>
+          </li>
           </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" id="searchinput" placeholder="Search by Name" aria-label="Search" onkeyup="searchFunction()">
         </form>
       </div>
     </nav>
-    <div id="oakhome" class="container">
+    <div id="oakhome" class="container oak">
       <div class="row">
         <div class="col-md-4 col-sm-12">
           <img src="../ProfOakStand.svg">
         </div>
         <div class="col-md-8 col-sm-12 outertext">
+          <div class="oaktext">
             <p>Hello there! Glad to meet you.</p>
             <p>Welcome to the world of POKÉMON.</p>
             <p>My name is OAK.</p>
@@ -86,15 +95,17 @@
             <br>
             <p class="hovertext" onclick="showHelp()">Yes</p>
             <p class="hovertext" onclick="showEnd()">No</p>
+           </div>
         </div>
       </div>
     </div>
-    <div id="oakhelp" class="container">
+    <div id="oakhelp" class="container oak">
         <div class="row">
           <div class="col-md-4 col-sm-12">
             <img src="../ProfOakStand.svg">
           </div>
           <div class="col-md-8 col-sm-12 outertext">
+            <div class="oaktext">
               <p>I would be happy to help!</p>
               <p>What would you like to know about?</p>
               <br>
@@ -107,15 +118,17 @@
               <p class="hovertext" onclick="showInfo()">Information</p>
               <br>
               <p id="ready" class="hovertext" onclick="showEnd()">I'm ready to go!</p>
+            </div>
           </div>
         </div>
       </div>
-    <div id="oakcustom" class="container">
+    <div id="oakcustom" class="container oak">
         <div class="row">
           <div class="col-md-4 col-sm-12">
             <img src="../ProfOakPoint.svg">
           </div>
           <div class="col-md-8 col-sm-12 outertext">
+            <div class="oaktext">
               <p>Your POKÉDEX is a customizable tool to help both you and me learn about POKÉMON around us.</p>
               <p>You can change the THEME of your POKÉDEX by selecting the CHANGE THEME button above.</p>
               <p>Each THEME available is based on different types of POKÉBALLS available to you in this world.</p>
@@ -123,16 +136,18 @@
               <p>Would you like to learn more?</p>
               <br>
               <p class="hovertext" onclick="showHelp()">Yes</p>
-              <p class="hovertext" onclick="showEnd()">No</p>              
+              <p class="hovertext" onclick="showEnd()">No</p>  
+            </div>            
           </div>
         </div>
       </div>
-    <div id="oaksort" class="container">
+    <div id="oaksort" class="container oak">
         <div class="row">
           <div class="col-md-4 col-sm-12">
             <img src="../ProfOakPoint.svg">
           </div>
           <div class="col-md-8 col-sm-12 outertext">
+            <div class="oaktext">
               <p>Each POKÉMON has one or two elemental TYPES.</p>
               <p>These TYPES can determines different MOVESETS that the POKÉMON can use, as well as what TYPES they are WEAK to.</p>
               <p>You can filter the POKÉMON that appear in your POKÉDEX by their type by using the SORT BY TYPE  button above.</p>
@@ -141,15 +156,17 @@
               <br>
               <p class="hovertext" onclick="showHelp()">Yes</p>
               <p class="hovertext" onclick="showEnd()">No</p>
+              </div>
           </div>
         </div>
       </div>
-    <div id="oaksearch" class="container">
+    <div id="oaksearch" class="container oak">
         <div class="row">
           <div class="col-md-4 col-sm-12">
             <img src="../ProfOakPoint.svg">
           </div>
           <div class="col-md-8 col-sm-12 outertext">
+            <div class="oaktext">
               <p>All POKÉMON are given a unique NAME.</p>
               <p>Using the search bar above, you can locate a POKÉMON based on its name.</p>
               <p>The SEARCH will be done automatically, so you may see multiple POKÉMON if their names begin the same way.</p>
@@ -157,15 +174,17 @@
               <br>
               <p class="hovertext" onclick="showHelp()">Yes</p>
               <p class="hovertext" onclick="showEnd()">No</p>
+             </div>
           </div>
         </div>
       </div>
-      <div id="oakinfo" class="container">
+      <div id="oakinfo" class="container oak">
           <div class="row">
             <div class="col-md-4 col-sm-12">
               <img src="../ProfOakPoint.svg">
             </div>
             <div class="col-md-8 col-sm-12 outertext">
+              <div class="oaktext">
                 <p>Each POKÉMON has different WEAKNESSES.</p>
                 <p>Knowing these WEAKNESSES especially can be helpful in BATTLE.</p>
                 <p>By clicking on the IMAGE of a POKÉMON, you will see more INFORMATION about them.</p>
@@ -175,20 +194,23 @@
                 <br>
                 <p class="hovertext" onclick="showHelp()">Yes</p>
                 <p class="hovertext" onclick="showEnd()">No</p>
+              </div>
             </div>
           </div>
         </div>
-    <div id="oakbegin" class="container">
+    <div id="oakbegin" class="container oak">
         <div class="row">
           <div class="col-md-4 col-sm-12">
             <img src="../ProfOakStand.svg">
           </div>
           <div class="col-md-8 col-sm-12 outertext">
+            <div class="oaktext">
               <p>Your very own POKÉMON legend is about to unfold!</p>
               <p>A world of dreams and adventures awaits you.</p>
               <p>Let's go!</p>
               <br>
               <p id="begin" class="hovertext" onclick="filterSelection('all')">Begin</p>
+            </div>
           </div>
         </div>
       </div>

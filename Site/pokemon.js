@@ -126,10 +126,6 @@
       }
     }
 
-    // create info sheets
-      // use js to completely create html files with json data?
-
-      // Prof Oak    
     var oakhome = document.getElementById("oakhome");
     var oakhelp = document.getElementById("oakhelp");
       var ready = document.getElementById("ready");
@@ -138,7 +134,7 @@
     var oaksearch = document.getElementById("oaksearch");
     var oakinfo = document.getElementById("oakinfo");
     var oakbegin = document.getElementById("oakbegin");
-      var begin = document.getElementById("begin");
+     var begin = document.getElementById("begin");
 
         function showHelp() {
           oakhome.style.display = "none";
@@ -194,7 +190,6 @@
           oakinfo.style.display = "none";
           oakbegin.style.display = "block";
         }
-        
 
     function filterSelection(c) {
 
@@ -277,7 +272,7 @@
       var pokeicon = document.getElementById("pokeicon");
       var stylesheet = document.getElementById("stylesheet");
 
-      theme = localStorage.getItem("theme");
+      var theme = localStorage.getItem("theme");
       stylesheet.href = theme;
 
       if (theme === "poke.css") {
