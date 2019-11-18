@@ -99,6 +99,49 @@ var oaksearch = document.getElementById("oaksearch");
 var oakinfo = document.getElementById("oakinfo");
 var oakbegin = document.getElementById("oakbegin");
 //  var visit = localStorage.getItem("visit");
+var visit = getCookie("visit");
+if (visit == ""){ 
+  localStorage.setItem("theme", "poke.css");
+  oakhome.style.display = "block";
+  oakhelp.style.display = "none";
+  oakcustom.style.display = "none";
+  oaksort.style.display = "none";
+  oaksearch.style.display = "none";
+  oakinfo.style.display = "none";
+  oakbegin.style.display = "none";
+  setCookie("visit", 1, 30);
+}
+else{
+  window.onload = function(){filterSelection('all');};
+  oakhome.style.display = "none";
+  oakhelp.style.display = "none";
+  oakcustom.style.display = "none";
+  oaksort.style.display = "none";
+  oaksearch.style.display = "none";
+  oakinfo.style.display = "none";
+  oakbegin.style.display = "none";
+}
+    function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      var expires = "expires="+ d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+    function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
     function showHelp() {
       filterSelection();
       oakhome.style.display = "none";
@@ -158,6 +201,7 @@ var oakbegin = document.getElementById("oakbegin");
       oakinfo.style.display = "none";
       oakbegin.style.display = "block";
       // localStorage.setItem("visit", 1);
+      // document.cookie = "visit=1";
     }
 function filterSelection(c) {
   oakhome.style.display = "none";
@@ -180,30 +224,9 @@ function filterSelection(c) {
     }
   }
 }
-// if (visit === null) {
-//   localStorage.setItem("theme", "poke.css");
-//   oakhome.style.display = "block";
-//   oakhelp.style.display = "none";
-//   oakcustom.style.display = "none";
-//   oaksort.style.display = "none";
-//   oaksearch.style.display = "none";
-//   oakinfo.style.display = "none";
-//   oakbegin.style.display = "none";
-// }
-// else {
-//   window.onload = function(){filterSelection('all');};
-//   oakhome.style.display = "none";
-//   oakhelp.style.display = "none";
-//   oakcustom.style.display = "none";
-//   oaksort.style.display = "none";
-//   oaksearch.style.display = "none";
-//   oakinfo.style.display = "none";
-//   oakbegin.style.display = "none";
-// }
 function addClass(element, name) {
   var i;
   var arr1 = element.className.split(" ");
-  // arr1 is all pokemon that match the type needed
   var arr2 = name.split(" ");
   // ".show"
   for (i = 0; i < arr2.length; i++) {
