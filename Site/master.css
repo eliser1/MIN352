@@ -238,3 +238,7 @@
   .oaktext > p {
     text-align: left;
   }
+  .pokeinfo {
+    text-align: center;
+    margin-top: 15px;
+  }
