@@ -1,3 +1,7 @@
+$(window).load(function() {
+  // Animate loader off screen
+  $(".se-pre-con").fadeOut("slow");;
+});
 var requestURL = 'https://eliser1.github.io/MIN352/Site/pokemon.json';
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
@@ -98,7 +102,6 @@ var oaksort = document.getElementById("oaksort");
 var oaksearch = document.getElementById("oaksearch");
 var oakinfo = document.getElementById("oakinfo");
 var oakbegin = document.getElementById("oakbegin");
-//  var visit = localStorage.getItem("visit");
 var visit = getCookie("visit");
 if (visit == ""){ 
   localStorage.setItem("theme", "poke.css");
@@ -112,7 +115,6 @@ if (visit == ""){
   setCookie("visit", 1, 30);
 }
 else{
-  window.onload = function(){filterSelection('all');};
   oakhome.style.display = "none";
   oakhelp.style.display = "none";
   oakcustom.style.display = "none";
@@ -120,6 +122,7 @@ else{
   oaksearch.style.display = "none";
   oakinfo.style.display = "none";
   oakbegin.style.display = "none";
+  filterSelection('all');
 }
     function setCookie(cname, cvalue, exdays) {
       var d = new Date();
@@ -218,7 +221,6 @@ function filterSelection(c) {
    }
   for (i = 0; i < x.length; i++) {
     removeClass(x[i], "show");
-    console.log(x[i]);
     if (x[i].className.indexOf(c) > -1) {
       addClass(x[i], "show");
     }
@@ -324,3 +326,4 @@ function searchFunction() {
     pokeicon.src = "../Pokeball.svg";
     stylesheet.href = "poke.css";
   }
+  
