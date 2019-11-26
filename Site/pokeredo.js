@@ -41,24 +41,25 @@ var pokeicon = document.getElementById("pokeicon");
 var stylesheet = document.getElementById("stylesheet");
 var theme = localStorage.getItem("theme");
 // Call .json file and send it to server
-var requestURL = 'https://eliser1.github.io/MIN352/Site/pokemon.json';
-var request = new XMLHttpRequest();
+let requestURL = 'https://eliser1.github.io/MIN352/Site/pokemon.json';
+let request = new XMLHttpRequest();
 request.open('GET', requestURL);
+request.responseType = 'json';
 request.send();
 // Show and create all Pokemon based on .json file
 request.onload = function() {
-    var pokemonData = request.response;
+    const pokemonData = request.response;
     showPokemon(pokemonData);
 }
 function showPokemon(jsonObj) {
     var pokemon = jsonObj;
     var myRow = document.getElementById('mainrow');
     for (var i = 0; i < pokemon.name.length; i++) {
-        var myDiv = document.createElement('div');
+        const myDiv = document.createElement('div');
         myDiv.classList.add("col-lg-3");
         myDiv.classList.add("col-sm-4");
         myDiv.classList.add("pokemon");
-        var type1 = jsonObj.type1[i] + "p";
+        const type1 = jsonObj.type1[i] + "p";
         myDiv.classList.add(type1);
         if (jsonObj.type2[i] === null) {
             }
@@ -66,14 +67,14 @@ function showPokemon(jsonObj) {
             var type2 = jsonObj.type2[i] + "p";
             myDiv.classList.add(type2);
             }
-        var myAnchor = document.createElement('a');
+        const myAnchor = document.createElement('a');
         myAnchor.href = jsonObj.name[i] + ".html";
-        var myImg = document.createElement('img');
+        const myImg = document.createElement('img');
         myImg.classList.add("img-thumbnail");
         myImg.src = "../" + jsonObj.name[i] + ".svg";
-        var myH2 = document.createElement('h2');
+        const myH2 = document.createElement('h2');
         myH2.classList.add("name");
-        var myNumber = document.createElement('p');
+        const myNumber = document.createElement('p');
         myNumber.classList.add("number");
         myH2.textContent = pokemon.name[i];
         myNumber.textContent = pokemon.number[i];
