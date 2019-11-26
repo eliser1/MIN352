@@ -21,7 +21,7 @@ var iceColor = "rgba(81, 1, 231, 0.375)";
 var ghostColor = "rgba(123, 98, 163, 0.375)";
 var dragonColor = "linear-gradient(180deg, rgba(83, 164, 207, 0.375) 50%, rgba(241, 95, 90, 0.375) 50%)";
 var darkColor = "rgba(112, 112, 112, 0.375)";
-// Set Oak screen and visit variables
+// Set Oak screen variables
 var oakhome = document.getElementById("oakhome");
 var oakhelp = document.getElementById("oakhelp");
 var oakcustom = document.getElementById("oakcustom");
@@ -29,7 +29,6 @@ var oaksort = document.getElementById("oaksort");
 var oaksearch = document.getElementById("oaksearch");
 var oakinfo = document.getElementById("oakinfo");
 var oakbegin = document.getElementById("oakbegin");
-var visit = localStorage.getItem("visit");
 // Add event listeners to the different balls to change themes
 document.getElementById("pokeball").addEventListener("click", changeThemeP);
 document.getElementById("greatball").addEventListener("click", changeThemeG);
@@ -198,21 +197,6 @@ function showEnd(){
     oaksearch.style.display = "none";
     oakinfo.style.display = "none";
     oakbegin.style.display = "block";
-    localStorage.setItem("visit", 1);
-}
-// Determine if user has visited the site before
-if (visit === null) {
-    localStorage.setItem("theme", "poke.css");
-    oakhome.style.display = "block";
-    oakhelp.style.display = "none";
-    oakcustom.style.display = "none";
-    oaksort.style.display = "none";
-    oaksearch.style.display = "none";
-    oakinfo.style.display = "none";
-    oakbegin.style.display = "none";
-}
-else {
-    filterSelection('all');
 }
 // Show only Pokemon of certain type
 function addClass(element, name) {
